@@ -55,6 +55,7 @@
 		8702CEA72A9787DB000B7758 /* LetsTravel */ = {
 			isa = PBXGroup;
 			children = (
+				8702CEBB2A978944000B7758 /* Views */,
 				8702CEA82A9787DB000B7758 /* LetsTravelApp.swift */,
 				8702CEAA2A9787DB000B7758 /* ContentView.swift */,
 				8702CEAC2A9787DC000B7758 /* Assets.xcassets */,
@@ -71,6 +72,13 @@
 				8702CEAF2A9787DC000B7758 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8702CEBB2A978944000B7758 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
