@@ -1,0 +1,40 @@
+//
+//  HeaderView.swift
+//  LetsTravel
+//
+//  Created by Ernestas Kazinevicius on 2023-08-24.
+//
+
+import Foundation
+import SwiftUI
+
+struct HeaderView: View {
+    var body: some View {
+            HStack{
+                Image("avatars")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .padding(.leading, 10)
+                
+                Spacer()
+                
+                Image(systemName: "location.fill")
+                    .foregroundColor(.blue)
+                Text("Horsens")
+                    .font(.system(size:16))
+                
+                Spacer()
+                
+                Image(systemName: "bell.fill")
+                    .padding(.trailing, 10)
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 3)
+    }
+}
+
+struct HeaderView_Preview: PreviewProvider{
+    static var previews: some View{
+        HeaderView()
+    }
+}

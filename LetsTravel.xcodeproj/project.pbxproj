@@ -13,7 +13,13 @@
 		8702CEB02A9787DC000B7758 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8702CEAF2A9787DC000B7758 /* Preview Assets.xcassets */; };
 		8702CEB22A9787DC000B7758 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEB12A9787DC000B7758 /* Persistence.swift */; };
 		8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEB32A9787DC000B7758 /* LetsTravel.xcdatamodeld */; };
-		8702CEBD2A978B58000B7758 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEBC2A978B58000B7758 /* Test.swift */; };
+		8702CEC52A979019000B7758 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEC42A979019000B7758 /* HomeView.swift */; };
+		8702CEC72A979035000B7758 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEC62A979035000B7758 /* CreateView.swift */; };
+		8702CEC92A979049000B7758 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEC82A979049000B7758 /* MessagesView.swift */; };
+		8702CECC2A9792F5000B7758 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CECB2A9792F5000B7758 /* HeaderView.swift */; };
+		8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */; };
+		8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED02A97ACDC000B7758 /* DestinationCard.swift */; };
+		8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED22A97AD33000B7758 /* DestinationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +30,13 @@
 		8702CEAF2A9787DC000B7758 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8702CEB12A9787DC000B7758 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8702CEB42A9787DC000B7758 /* LetsTravel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LetsTravel.xcdatamodel; sourceTree = "<group>"; };
-		8702CEBC2A978B58000B7758 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		8702CEC42A979019000B7758 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8702CEC62A979035000B7758 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		8702CEC82A979049000B7758 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		8702CECB2A9792F5000B7758 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBottom.swift; sourceTree = "<group>"; };
+		8702CED02A97ACDC000B7758 /* DestinationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCard.swift; sourceTree = "<group>"; };
+		8702CED22A97AD33000B7758 /* DestinationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +53,7 @@
 		8702CE9C2A9787DB000B7758 = {
 			isa = PBXGroup;
 			children = (
+				8702CEC32A978DE0000B7758 /* Persistence */,
 				8702CEA72A9787DB000B7758 /* LetsTravel */,
 				8702CEA62A9787DB000B7758 /* Products */,
 			);
@@ -58,10 +71,13 @@
 			isa = PBXGroup;
 			children = (
 				8702CEBB2A978944000B7758 /* Views */,
+				8702CEC22A978C63000B7758 /* Resources */,
+				8702CEC12A978C5C000B7758 /* Utilities */,
+				8702CEC02A978C51000B7758 /* ViewControllers */,
+				8702CEBF2A978C45000B7758 /* Services */,
+				8702CEBE2A978C40000B7758 /* Models */,
 				8702CEA82A9787DB000B7758 /* LetsTravelApp.swift */,
-				8702CEAA2A9787DB000B7758 /* ContentView.swift */,
 				8702CEAC2A9787DC000B7758 /* Assets.xcassets */,
-				8702CEB12A9787DC000B7758 /* Persistence.swift */,
 				8702CEB32A9787DC000B7758 /* LetsTravel.xcdatamodeld */,
 				8702CEAE2A9787DC000B7758 /* Preview Content */,
 			);
@@ -79,9 +95,75 @@
 		8702CEBB2A978944000B7758 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8702CEBC2A978B58000B7758 /* Test.swift */,
+				8702CECF2A97ACC5000B7758 /* AdditionalViews */,
+				8702CECA2A9792E3000B7758 /* ReusableViews */,
+				8702CEAA2A9787DB000B7758 /* ContentView.swift */,
+				8702CEC42A979019000B7758 /* HomeView.swift */,
+				8702CEC62A979035000B7758 /* CreateView.swift */,
+				8702CEC82A979049000B7758 /* MessagesView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8702CEBE2A978C40000B7758 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8702CED22A97AD33000B7758 /* DestinationData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8702CEBF2A978C45000B7758 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8702CEC02A978C51000B7758 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8702CEC12A978C5C000B7758 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8702CEC22A978C63000B7758 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8702CEC32A978DE0000B7758 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				8702CEB12A9787DC000B7758 /* Persistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		8702CECA2A9792E3000B7758 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				8702CECB2A9792F5000B7758 /* HeaderView.swift */,
+				8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		8702CECF2A97ACC5000B7758 /* AdditionalViews */ = {
+			isa = PBXGroup;
+			children = (
+				8702CED02A97ACDC000B7758 /* DestinationCard.swift */,
+			);
+			path = AdditionalViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,11 +236,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */,
+				8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */,
 				8702CEB22A9787DC000B7758 /* Persistence.swift in Sources */,
 				8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */,
-				8702CEBD2A978B58000B7758 /* Test.swift in Sources */,
 				8702CEAB2A9787DB000B7758 /* ContentView.swift in Sources */,
+				8702CEC52A979019000B7758 /* HomeView.swift in Sources */,
+				8702CEC92A979049000B7758 /* MessagesView.swift in Sources */,
+				8702CEC72A979035000B7758 /* CreateView.swift in Sources */,
+				8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */,
 				8702CEA92A9787DB000B7758 /* LetsTravelApp.swift in Sources */,
+				8702CECC2A9792F5000B7758 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
