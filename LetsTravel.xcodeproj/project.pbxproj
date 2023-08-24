@@ -13,6 +13,7 @@
 		8702CEB02A9787DC000B7758 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8702CEAF2A9787DC000B7758 /* Preview Assets.xcassets */; };
 		8702CEB22A9787DC000B7758 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEB12A9787DC000B7758 /* Persistence.swift */; };
 		8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEB32A9787DC000B7758 /* LetsTravel.xcdatamodeld */; };
+		8702CEBD2A978B58000B7758 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CEBC2A978B58000B7758 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		8702CEAF2A9787DC000B7758 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8702CEB12A9787DC000B7758 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8702CEB42A9787DC000B7758 /* LetsTravel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LetsTravel.xcdatamodel; sourceTree = "<group>"; };
+		8702CEBC2A978B58000B7758 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		8702CEBB2A978944000B7758 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8702CEBC2A978B58000B7758 /* Test.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				8702CEB22A9787DC000B7758 /* Persistence.swift in Sources */,
 				8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */,
+				8702CEBD2A978B58000B7758 /* Test.swift in Sources */,
 				8702CEAB2A9787DB000B7758 /* ContentView.swift in Sources */,
 				8702CEA92A9787DB000B7758 /* LetsTravelApp.swift in Sources */,
 			);
