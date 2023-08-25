@@ -18,6 +18,11 @@ struct HomeView: View {
             Continent(id: 5, name: "Europe"),
             Continent(id: 6, name: "Europe"),
         ]
+    
+    @State private var currentIndex: Int = 0
+    @State private var dragOffSet: CGFloat = 0
+    
+    private let images: [String] = ["image1", "image2", "image3", "image4", "image5"]
     @State private var activeRegion: Int = 1
     @State private var selectedDestinationIndex: Int = 0
     
@@ -50,7 +55,6 @@ struct HomeView: View {
                 HStack(spacing: 8){
                     ForEach(continentsData, id: \.id){ item in
                         let isActive = item.id == activeRegion
-                        let activeTextClass = isActive ? "text-white":"text-gray-700"
                         Button(action: {
                             activeRegion = item.id
                         }) {
@@ -68,18 +72,40 @@ struct HomeView: View {
                 .padding(.horizontal, 18)
                 .padding(.top, 12)
             }
+            Spacer()
             
-            TabView(selection: $selectedDestinationIndex ){
-                ForEach(data) { item in
-                    DestinationCard(item: item)
-                        .tag(item.id)
+            
+            ZStack{
+                ZStack{
+                    ForEach(0..<data.count, id: \.self){ index in
+                            DestinationCard(item: data[index])
+                                .frame(width: 250, height: 400)
+                                .cornerRadius(25)
+                                .opacity(currentIndex == index ? 1.0 : 0.5)
+                                .scaleEffect(currentIndex == index ? 1.2 : 0.8)
+                                .offset(x: CGFloat(index - currentIndex) * 265 + dragOffSet, y: 0)
+                        
+                        
+                    }
                 }
+                .gesture(
+                DragGesture()
+                    .onEnded{value in
+                        let threshold: CGFloat = 50
+                        if value.translation.width > threshold {
+                            withAnimation{
+                                currentIndex = max(0, currentIndex - 1)
+                            }
+                        } else if value.translation.width < -threshold {
+                            withAnimation{
+                                currentIndex = min(data.count - 1, currentIndex + 1)
+                            }
+                        }
+                    }
+               
+                )
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .frame(height:450)
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            .padding(.horizontal)
-            .padding(.top,12)
+            
             
             
             Spacer()

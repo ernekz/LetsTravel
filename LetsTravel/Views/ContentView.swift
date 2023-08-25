@@ -10,12 +10,13 @@ import CoreData
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 0.0){
-            HeaderView()
-            NavigationBarBottom()
+        NavigationView{
+            VStack(spacing: 0.0){
+                HeaderView()
+                NavigationBarBottom()
+            }
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

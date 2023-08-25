@@ -20,7 +20,7 @@ struct HeaderView: View {
                 
                 Image(systemName: "location.fill")
                     .foregroundColor(.blue)
-                Text("Horsens")
+                Text("Horsens, DK")
                     .font(.system(size:16))
                 
                 Spacer()
