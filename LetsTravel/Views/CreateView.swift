@@ -11,6 +11,9 @@ import SwiftUI
 struct CreateView: View {
     
     @StateObject private var viewModel = CreateViewModel()
+    
+    @State private var showAlert = false
+    @State private var alertMessage = ""
 
     var body: some View{
         ZStack {
@@ -143,14 +146,20 @@ struct CreateView: View {
                                 viewModel.submit{ success in
                                     if success {
                                         print("Papa papsiku")
+                                        alertMessage = "Destination has been created"
+                                        showAlert = true
                                     } else {
                                         print("ne papa papisku")
                                     }
+                                    
                                 }
                             }.frame(width: 200, height: 45)
                                 .background(Color.cyan)
                                 .cornerRadius(25)
                                 .padding(.leading, 50)
+                                .alert(isPresented: $showAlert){
+                                    Alert(title: Text(alertMessage))
+                                }
                             
                             
                         }
