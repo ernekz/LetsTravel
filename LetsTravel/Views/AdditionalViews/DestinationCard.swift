@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct DestinationCard: View{
-    let item: DestinationData
+    let item: Destination
     
     var body: some View{
             VStack{
@@ -53,7 +53,7 @@ struct DestinationCard: View{
                     Text("Leaving date:")
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(Color.white.opacity(0.6))
-                    Text(item.leavingDate)
+                    Text(item.leavingDate ?? "2020-04-05")
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(.white)
                 }.padding(.top,1)
@@ -105,7 +105,7 @@ struct DestinationCard: View{
 
 struct DestinationCardView_Preview: PreviewProvider{
     static var previews: some View{
-        let sampleData = DestinationData(id: 1, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUlr: "imgurl", description: "easy trip for a good vacation")
+        let sampleData = Destination(id: 1, continentId: 2, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUrl: "imgurl", description: "easy trip for a good vacation")
         return DestinationCard(item: sampleData)
             .previewLayout(.sizeThatFits)
     }

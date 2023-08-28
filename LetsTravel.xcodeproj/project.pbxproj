@@ -20,8 +20,15 @@
 		8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */; };
 		8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED02A97ACDC000B7758 /* DestinationCard.swift */; };
 		8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED22A97AD33000B7758 /* DestinationData.swift */; };
-		876B33B12A97DD7F00C2A197 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B33B02A97DD7F00C2A197 /* HomeViewController.swift */; };
 		8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795682A2A989D9C00BDD6AD /* DestinationView.swift */; };
+		87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6DF2A9911B500A08F44 /* Continent.swift */; };
+		87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E12A99123300A08F44 /* HomeViewModel.swift */; };
+		87ACD6E42A9912A100A08F44 /* ContinentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E32A9912A100A08F44 /* ContinentService.swift */; };
+		87ACD6E62A9CB4E900A08F44 /* DestinationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E52A9CB4E900A08F44 /* DestinationService.swift */; };
+		87ACD6E82A9CB54B00A08F44 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E72A9CB54B00A08F44 /* Destination.swift */; };
+		87E2AFBF2A9CEAC800461201 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */; };
+		87F73AE42A98FDF20078B7A5 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F73AE32A98FDF20078B7A5 /* CreateViewModel.swift */; };
+		87F73AE62A98FEA40078B7A5 /* CreateDestinationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F73AE52A98FEA40078B7A5 /* CreateDestinationInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,14 +40,21 @@
 		8702CEB12A9787DC000B7758 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8702CEB42A9787DC000B7758 /* LetsTravel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LetsTravel.xcdatamodel; sourceTree = "<group>"; };
 		8702CEC42A979019000B7758 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		8702CEC62A979035000B7758 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		8702CEC62A979035000B7758 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8702CEC82A979049000B7758 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		8702CECB2A9792F5000B7758 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBottom.swift; sourceTree = "<group>"; };
 		8702CED02A97ACDC000B7758 /* DestinationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCard.swift; sourceTree = "<group>"; };
 		8702CED22A97AD33000B7758 /* DestinationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationData.swift; sourceTree = "<group>"; };
-		876B33B02A97DD7F00C2A197 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8795682A2A989D9C00BDD6AD /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
+		87ACD6DF2A9911B500A08F44 /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
+		87ACD6E12A99123300A08F44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		87ACD6E32A9912A100A08F44 /* ContinentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentService.swift; sourceTree = "<group>"; };
+		87ACD6E52A9CB4E900A08F44 /* DestinationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationService.swift; sourceTree = "<group>"; };
+		87ACD6E72A9CB54B00A08F44 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
+		87F73AE32A98FDF20078B7A5 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
+		87F73AE52A98FEA40078B7A5 /* CreateDestinationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDestinationInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +88,10 @@
 		8702CEA72A9787DB000B7758 /* LetsTravel */ = {
 			isa = PBXGroup;
 			children = (
+				87F73AE22A98FDE00078B7A5 /* ViewModel */,
 				8702CEBB2A978944000B7758 /* Views */,
 				8702CEC22A978C63000B7758 /* Resources */,
 				8702CEC12A978C5C000B7758 /* Utilities */,
-				8702CEC02A978C51000B7758 /* ViewControllers */,
 				8702CEBF2A978C45000B7758 /* Services */,
 				8702CEBE2A978C40000B7758 /* Models */,
 				8702CEA82A9787DB000B7758 /* LetsTravelApp.swift */,
@@ -114,6 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				8702CED22A97AD33000B7758 /* DestinationData.swift */,
+				87F73AE52A98FEA40078B7A5 /* CreateDestinationInput.swift */,
+				87ACD6DF2A9911B500A08F44 /* Continent.swift */,
+				87ACD6E72A9CB54B00A08F44 /* Destination.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,21 +138,16 @@
 		8702CEBF2A978C45000B7758 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				87ACD6E32A9912A100A08F44 /* ContinentService.swift */,
+				87ACD6E52A9CB4E900A08F44 /* DestinationService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		8702CEC02A978C51000B7758 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				876B33B02A97DD7F00C2A197 /* HomeViewController.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		8702CEC12A978C5C000B7758 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -170,6 +182,15 @@
 				8702CED02A97ACDC000B7758 /* DestinationCard.swift */,
 			);
 			path = AdditionalViews;
+			sourceTree = "<group>";
+		};
+		87F73AE22A98FDE00078B7A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				87F73AE32A98FDF20078B7A5 /* CreateViewModel.swift */,
+				87ACD6E12A99123300A08F44 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,18 +264,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */,
+				87ACD6E42A9912A100A08F44 /* ContinentService.swift in Sources */,
 				8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */,
 				8702CEB22A9787DC000B7758 /* Persistence.swift in Sources */,
+				87F73AE62A98FEA40078B7A5 /* CreateDestinationInput.swift in Sources */,
 				8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */,
+				87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */,
+				87F73AE42A98FDF20078B7A5 /* CreateViewModel.swift in Sources */,
+				87ACD6E82A9CB54B00A08F44 /* Destination.swift in Sources */,
+				87ACD6E62A9CB4E900A08F44 /* DestinationService.swift in Sources */,
 				8702CEAB2A9787DB000B7758 /* ContentView.swift in Sources */,
 				8702CEC52A979019000B7758 /* HomeView.swift in Sources */,
 				8702CEC92A979049000B7758 /* MessagesView.swift in Sources */,
 				8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */,
 				8702CEC72A979035000B7758 /* CreateView.swift in Sources */,
+				87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */,
 				8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */,
+				87E2AFBF2A9CEAC800461201 /* FieldValidator.swift in Sources */,
 				8702CEA92A9787DB000B7758 /* LetsTravelApp.swift in Sources */,
 				8702CECC2A9792F5000B7758 /* HeaderView.swift in Sources */,
-				876B33B12A97DD7F00C2A197 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct DestinationView: View{
-    let item: DestinationData
+    let item: Destination
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -172,7 +172,7 @@ struct DestinationView: View{
 
 struct DestinationView_Preview: PreviewProvider{
     static var previews: some View{
-        let sampleData = DestinationData(id: 1, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUlr: "imgurl", description: "easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation")
+        let sampleData = Destination(id: 1, continentId: 2, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUrl: "imgurl", description: "easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation")
         return DestinationView(item: sampleData)
             .previewLayout(.sizeThatFits)
     }
