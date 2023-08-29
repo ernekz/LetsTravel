@@ -13,7 +13,7 @@ struct HomeView: View {
     @State private var currentIndex: Int = 0
     @State private var dragOffSet: CGFloat = 0
     
-    @State private var activeRegion: Int = 1
+    @State private var activeRegion: Int? = nil
     @State private var selectedDestinationIndex: Int = 0
     
     @StateObject private var viewModel = HomeViewModel()
@@ -45,10 +45,10 @@ struct HomeView: View {
             .padding()
             ScrollView(.horizontal, showsIndicators: false){
                 HStack(spacing: 8){
-                    ForEach(viewModel.continents){ continent in
+                    ForEach(viewModel.allContinents){ continent in
                         let isActive = continent.id == activeRegion
                         Button(action: {
-                            activeRegion = continent.id
+                            activeRegion = continent.id == viewModel.popularContinent.id ? -1 : continent.id
                         }) {
                             Text(continent.name)
                                 .font(.system(size:14))
@@ -66,6 +66,7 @@ struct HomeView: View {
             }
             .onAppear{
                 viewModel.fetchContinents()
+                
             }
             Spacer()
             
@@ -100,7 +101,15 @@ struct HomeView: View {
                
                 )
             }.onAppear{
+                activeRegion = viewModel.popularContinent.id
                 viewModel.fetchDestinations()
+            }
+            .onChange(of: activeRegion) { newActiveRegion in
+                if newActiveRegion == viewModel.popularContinent.id {
+                        viewModel.fetchDestinations() // Fetch all destinations for "Popular" continent
+                    } else if let continentId = newActiveRegion {
+                        viewModel.fetchDestinationsByContinent(continentId: continentId)
+                    }
             }
             
             

@@ -9,37 +9,37 @@ import Foundation
 
 class DestinationService {
     
+    static let shared = DestinationService()
+    
+    private let networkRequestManager = NetworkRequestManager.shared
+    
+    private init(){}
+    
+    private let baseURL = "http://localhost:8080/api/destination"
+    
+    private func createURL(with path: String) -> URL? {
+        return URL(string: baseURL + path)
+    }
+    
     func fetchAllDestinations(completion: @escaping ([Destination]?) -> Void){
-        guard let url = URL(string: "http://localhost:8080/api/destination/getAll") else {
+        guard let url = createURL(with: "/getAll") else {
             completion(nil)
             return
         }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error{
+        networkRequestManager.performGetRequest(url: url) { (result: Result<[Destination], Error>) in
+            switch result{
+            case .success(let destinations):
+                completion(destinations)
+            case .failure(let error):
                 print("Error fetching all destinations: \(error)")
                 completion(nil)
-                return
             }
-            
-            guard let data = data else {
-                completion(nil)
-                return
-            }
-            
-            do{
-                let decoder = JSONDecoder()
-                let destinations = try decoder.decode([Destination].self, from: data)
-                completion(destinations)
-            } catch {
-                print("Error decoding destinations: \(error)")
-                completion(nil)
-            }
-        }.resume()
+        }
     }
     
     func createDestination(newDestination: CreateDestinationInput, completion: @escaping (Bool) -> Void){
-        guard let url = URL(string: "http://localhost:8080/api/destination/create") else {
+        guard let url = createURL(with: "/create") else {
             completion(false)
             return
         }
@@ -54,19 +54,37 @@ class DestinationService {
             
             print("Json data: \(jsonData)")
             
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
+            networkRequestManager.performPostRequest(url: url, requestData: request) { result in
+                switch result {
+                case .success:
+                    completion(true)
+                case .failure(let error):
                     print("Error creating destination: \(error)")
                     completion(false)
-                    return
                 }
-                
-                completion(true)
             }
-            task.resume()
         } catch {
             print("Error encoding destination: \(error)")
             completion(false);
+        }
+        
+    }
+    
+    func fetchDestinationsByContinentId(continentId: Int, completion: @escaping ([Destination]?) -> Void) {
+        guard let url = createURL(with: "/getByContinent/\(continentId)") else {
+            completion(nil)
+            return
+        }
+        
+        networkRequestManager.performGetRequest(url: url) { (result: Result<[Destination], Error>) in
+            switch result {
+            case .success(let destinations):
+                completion(destinations)
+            case .failure(let error):
+                print("Error fetching destination by continent: \(error)")
+                completion(nil)
+            }
+            
         }
         
     }

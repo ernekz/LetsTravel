@@ -11,7 +11,7 @@ import Foundation
 class CreateViewModel: ObservableObject {
     
     private let continentService = ContinentService()
-    private let destinationService = DestinationService()
+    private let destinationService = DestinationService.shared
     
     @Published var createInput = CreateDestinationInput(
             country: "",

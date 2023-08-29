@@ -12,8 +12,14 @@ class HomeViewModel: ObservableObject {
     @Published var destinations: [Destination] = []
     
     private let continentService = ContinentService()
-    private let destinationService = DestinationService()
+    private let destinationService = DestinationService.shared
     
+    @Published var popularContinent = Continent(id: -1, name: "Popular")
+    
+    
+    var allContinents: [Continent]{
+        return [popularContinent] + continents
+    }
     func fetchContinents(){
         continentService.fetchContinents { [weak self] continents in
             DispatchQueue.main.async {
@@ -26,7 +32,15 @@ class HomeViewModel: ObservableObject {
         destinationService.fetchAllDestinations{ [weak self] destinations in
             DispatchQueue.main.async {
                 self?.destinations = destinations ?? []
-                print("Fetched destinations: \(destinations ?? [])")
+                
+            }
+        }
+    }
+    
+    func fetchDestinationsByContinent(continentId: Int){
+        destinationService.fetchDestinationsByContinentId(continentId: continentId) {[weak self] destinations in
+            DispatchQueue.main.async {
+                self?.destinations = destinations ?? []
             }
         }
     }

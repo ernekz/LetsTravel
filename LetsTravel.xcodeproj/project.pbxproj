@@ -20,6 +20,7 @@
 		8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */; };
 		8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED02A97ACDC000B7758 /* DestinationCard.swift */; };
 		8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED22A97AD33000B7758 /* DestinationData.swift */; };
+		8769CC952A9E1DBD0089004C /* NetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC942A9E1DBD0089004C /* NetworkRequestManager.swift */; };
 		8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795682A2A989D9C00BDD6AD /* DestinationView.swift */; };
 		87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6DF2A9911B500A08F44 /* Continent.swift */; };
 		87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E12A99123300A08F44 /* HomeViewModel.swift */; };
@@ -46,6 +47,7 @@
 		8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBottom.swift; sourceTree = "<group>"; };
 		8702CED02A97ACDC000B7758 /* DestinationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCard.swift; sourceTree = "<group>"; };
 		8702CED22A97AD33000B7758 /* DestinationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationData.swift; sourceTree = "<group>"; };
+		8769CC942A9E1DBD0089004C /* NetworkRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestManager.swift; sourceTree = "<group>"; };
 		8795682A2A989D9C00BDD6AD /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		87ACD6DF2A9911B500A08F44 /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
 		87ACD6E12A99123300A08F44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				87ACD6E32A9912A100A08F44 /* ContinentService.swift */,
 				87ACD6E52A9CB4E900A08F44 /* DestinationService.swift */,
+				8769CC942A9E1DBD0089004C /* NetworkRequestManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				8702CEAB2A9787DB000B7758 /* ContentView.swift in Sources */,
 				8702CEC52A979019000B7758 /* HomeView.swift in Sources */,
 				8702CEC92A979049000B7758 /* MessagesView.swift in Sources */,
+				8769CC952A9E1DBD0089004C /* NetworkRequestManager.swift in Sources */,
 				8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */,
 				8702CEC72A979035000B7758 /* CreateView.swift in Sources */,
 				87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */,
