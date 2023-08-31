@@ -73,6 +73,7 @@ class CreateViewModel: ObservableObject {
         
         destinationService.createDestination(newDestination: createInput, completion: completion)
         
+        
     }
     
     func fetchContinents(){
@@ -82,6 +83,22 @@ class CreateViewModel: ObservableObject {
                 print("Fetched continents: \(continents ?? [])")
             }
         }
+    }
+    
+    func cleanTheForm(){
+        createInput = CreateDestinationInput(
+                country: "",
+                continentId: 0,
+                createdBy: 123,
+                city: "",
+                people: "",
+                leavingDate: "",
+                returningDate: "",
+                description: "",
+                imageUrl: "image_url"
+                )
+        lDate = Date()
+        rDate = Date()
     }
     
     

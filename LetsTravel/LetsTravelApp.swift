@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct LetsTravelApp: App {
+    @StateObject private var tabSelection = TabSelection()
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(tabSelection)
         }
     }
 }

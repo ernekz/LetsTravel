@@ -14,6 +14,8 @@ class HomeViewModel: ObservableObject {
     private let continentService = ContinentService()
     private let destinationService = DestinationService.shared
     
+    @Published var activeRegion: Int? = nil
+    
     @Published var popularContinent = Continent(id: -1, name: "Popular")
     
     
@@ -41,6 +43,25 @@ class HomeViewModel: ObservableObject {
         destinationService.fetchDestinationsByContinentId(continentId: continentId) {[weak self] destinations in
             DispatchQueue.main.async {
                 self?.destinations = destinations ?? []
+            }
+        }
+    }
+    
+    func fetchUpdatedDestinations(){
+        destinationService.fetchKafkaMessages{ [weak self] newDestinations in
+            DispatchQueue.main.async {
+                guard let self = self, let newDestinations = newDestinations else{
+                    return
+                }
+                
+                let filteredNewDestinations = newDestinations.filter { newDestination in
+                    return newDestination.continentId == self.activeRegion
+                    
+                }
+                var uniqueDestinations = Set(self.destinations)
+                uniqueDestinations.formUnion(newDestinations)
+                self.destinations = Array(uniqueDestinations)
+                
             }
         }
     }

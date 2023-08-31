@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Destination: Identifiable, Decodable, Equatable {
+struct Destination: Identifiable, Decodable, Equatable, Hashable {
     
     let id: Int
     let continentId: Int

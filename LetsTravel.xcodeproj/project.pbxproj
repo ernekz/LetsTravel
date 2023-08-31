@@ -20,7 +20,12 @@
 		8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */; };
 		8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED02A97ACDC000B7758 /* DestinationCard.swift */; };
 		8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED22A97AD33000B7758 /* DestinationData.swift */; };
+		873208682AA11BF900586B93 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873208672AA11BF900586B93 /* ProfileView.swift */; };
+		8732086A2AA1236900586B93 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873208692AA1236900586B93 /* FeedView.swift */; };
+		8732086C2AA1238800586B93 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8732086B2AA1238800586B93 /* ChatView.swift */; };
 		8769CC952A9E1DBD0089004C /* NetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC942A9E1DBD0089004C /* NetworkRequestManager.swift */; };
+		8769CC972A9FC0C60089004C /* KafkaMessagePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */; };
+		8769CC992AA1000F0089004C /* TabSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC982AA1000F0089004C /* TabSelection.swift */; };
 		8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795682A2A989D9C00BDD6AD /* DestinationView.swift */; };
 		87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6DF2A9911B500A08F44 /* Continent.swift */; };
 		87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E12A99123300A08F44 /* HomeViewModel.swift */; };
@@ -47,7 +52,12 @@
 		8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBottom.swift; sourceTree = "<group>"; };
 		8702CED02A97ACDC000B7758 /* DestinationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCard.swift; sourceTree = "<group>"; };
 		8702CED22A97AD33000B7758 /* DestinationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationData.swift; sourceTree = "<group>"; };
+		873208672AA11BF900586B93 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		873208692AA1236900586B93 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		8732086B2AA1238800586B93 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		8769CC942A9E1DBD0089004C /* NetworkRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestManager.swift; sourceTree = "<group>"; };
+		8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KafkaMessagePublisher.swift; sourceTree = "<group>"; };
+		8769CC982AA1000F0089004C /* TabSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSelection.swift; sourceTree = "<group>"; };
 		8795682A2A989D9C00BDD6AD /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		87ACD6DF2A9911B500A08F44 /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
 		87ACD6E12A99123300A08F44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +132,8 @@
 				8702CEC62A979035000B7758 /* CreateView.swift */,
 				8702CEC82A979049000B7758 /* MessagesView.swift */,
 				8795682A2A989D9C00BDD6AD /* DestinationView.swift */,
+				873208672AA11BF900586B93 /* ProfileView.swift */,
+				873208692AA1236900586B93 /* FeedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */,
+				8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */,
+				8769CC982AA1000F0089004C /* TabSelection.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -183,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				8702CED02A97ACDC000B7758 /* DestinationCard.swift */,
+				8732086B2AA1238800586B93 /* ChatView.swift */,
 			);
 			path = AdditionalViews;
 			sourceTree = "<group>";
@@ -272,20 +287,25 @@
 				8702CEB22A9787DC000B7758 /* Persistence.swift in Sources */,
 				87F73AE62A98FEA40078B7A5 /* CreateDestinationInput.swift in Sources */,
 				8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */,
+				8732086C2AA1238800586B93 /* ChatView.swift in Sources */,
 				87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */,
 				87F73AE42A98FDF20078B7A5 /* CreateViewModel.swift in Sources */,
 				87ACD6E82A9CB54B00A08F44 /* Destination.swift in Sources */,
 				87ACD6E62A9CB4E900A08F44 /* DestinationService.swift in Sources */,
+				8732086A2AA1236900586B93 /* FeedView.swift in Sources */,
 				8702CEAB2A9787DB000B7758 /* ContentView.swift in Sources */,
 				8702CEC52A979019000B7758 /* HomeView.swift in Sources */,
 				8702CEC92A979049000B7758 /* MessagesView.swift in Sources */,
 				8769CC952A9E1DBD0089004C /* NetworkRequestManager.swift in Sources */,
 				8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */,
 				8702CEC72A979035000B7758 /* CreateView.swift in Sources */,
+				873208682AA11BF900586B93 /* ProfileView.swift in Sources */,
 				87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */,
 				8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */,
 				87E2AFBF2A9CEAC800461201 /* FieldValidator.swift in Sources */,
+				8769CC972A9FC0C60089004C /* KafkaMessagePublisher.swift in Sources */,
 				8702CEA92A9787DB000B7758 /* LetsTravelApp.swift in Sources */,
+				8769CC992AA1000F0089004C /* TabSelection.swift in Sources */,
 				8702CECC2A9792F5000B7758 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

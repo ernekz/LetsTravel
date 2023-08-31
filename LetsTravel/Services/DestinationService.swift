@@ -88,4 +88,24 @@ class DestinationService {
         }
         
     }
+    
+    //Fetching Kafka messages about newly created destinations for real-time update
+    
+    func fetchKafkaMessages(completion: @escaping ([Destination]?) -> Void){
+        guard let url = URL(string:"http://localhost:8081/api/message") else {
+            completion(nil)
+            return
+        }
+        
+        networkRequestManager.performGetRequest(url: url) {(result: Result<[Destination], Error>) in
+            switch result {
+            case .success(let destinations):
+                    completion(destinations)
+            case .failure(let error):
+                print("Error receiving messages from kafka: \(error)")
+                completion(nil)
+            }
+            
+        }
+    }
 }
