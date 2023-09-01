@@ -27,6 +27,12 @@
 		8769CC972A9FC0C60089004C /* KafkaMessagePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */; };
 		8769CC992AA1000F0089004C /* TabSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC982AA1000F0089004C /* TabSelection.swift */; };
 		8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795682A2A989D9C00BDD6AD /* DestinationView.swift */; };
+		87ABC46C2AA238B400E5E022 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46B2AA238B400E5E022 /* FeedCell.swift */; };
+		87ABC46E2AA2491200E5E022 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46D2AA2491200E5E022 /* LoginView.swift */; };
+		87ABC4702AA2491C00E5E022 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46F2AA2491C00E5E022 /* RegistrationView.swift */; };
+		87ABC4722AA24A1400E5E022 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC4712AA24A1400E5E022 /* InputView.swift */; };
+		87ABC4742AA2527700E5E022 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC4732AA2527700E5E022 /* LoginViewModel.swift */; };
+		87ABC4762AA2528000E5E022 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC4752AA2528000E5E022 /* RegisterViewModel.swift */; };
 		87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6DF2A9911B500A08F44 /* Continent.swift */; };
 		87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E12A99123300A08F44 /* HomeViewModel.swift */; };
 		87ACD6E42A9912A100A08F44 /* ContinentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E32A9912A100A08F44 /* ContinentService.swift */; };
@@ -59,6 +65,12 @@
 		8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KafkaMessagePublisher.swift; sourceTree = "<group>"; };
 		8769CC982AA1000F0089004C /* TabSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSelection.swift; sourceTree = "<group>"; };
 		8795682A2A989D9C00BDD6AD /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
+		87ABC46B2AA238B400E5E022 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		87ABC46D2AA2491200E5E022 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		87ABC46F2AA2491C00E5E022 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		87ABC4712AA24A1400E5E022 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		87ABC4732AA2527700E5E022 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		87ABC4752AA2528000E5E022 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		87ACD6DF2A9911B500A08F44 /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
 		87ACD6E12A99123300A08F44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		87ACD6E32A9912A100A08F44 /* ContinentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentService.swift; sourceTree = "<group>"; };
@@ -134,6 +146,8 @@
 				8795682A2A989D9C00BDD6AD /* DestinationView.swift */,
 				873208672AA11BF900586B93 /* ProfileView.swift */,
 				873208692AA1236900586B93 /* FeedView.swift */,
+				87ABC46D2AA2491200E5E022 /* LoginView.swift */,
+				87ABC46F2AA2491C00E5E022 /* RegistrationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +212,8 @@
 			children = (
 				8702CED02A97ACDC000B7758 /* DestinationCard.swift */,
 				8732086B2AA1238800586B93 /* ChatView.swift */,
+				87ABC46B2AA238B400E5E022 /* FeedCell.swift */,
+				87ABC4712AA24A1400E5E022 /* InputView.swift */,
 			);
 			path = AdditionalViews;
 			sourceTree = "<group>";
@@ -207,6 +223,8 @@
 			children = (
 				87F73AE32A98FDF20078B7A5 /* CreateViewModel.swift */,
 				87ACD6E12A99123300A08F44 /* HomeViewModel.swift */,
+				87ABC4732AA2527700E5E022 /* LoginViewModel.swift */,
+				87ABC4752AA2528000E5E022 /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -284,11 +302,13 @@
 				8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */,
 				87ACD6E42A9912A100A08F44 /* ContinentService.swift in Sources */,
 				8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */,
+				87ABC4762AA2528000E5E022 /* RegisterViewModel.swift in Sources */,
 				8702CEB22A9787DC000B7758 /* Persistence.swift in Sources */,
 				87F73AE62A98FEA40078B7A5 /* CreateDestinationInput.swift in Sources */,
 				8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */,
 				8732086C2AA1238800586B93 /* ChatView.swift in Sources */,
 				87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */,
+				87ABC46C2AA238B400E5E022 /* FeedCell.swift in Sources */,
 				87F73AE42A98FDF20078B7A5 /* CreateViewModel.swift in Sources */,
 				87ACD6E82A9CB54B00A08F44 /* Destination.swift in Sources */,
 				87ACD6E62A9CB4E900A08F44 /* DestinationService.swift in Sources */,
@@ -296,15 +316,19 @@
 				8702CEAB2A9787DB000B7758 /* ContentView.swift in Sources */,
 				8702CEC52A979019000B7758 /* HomeView.swift in Sources */,
 				8702CEC92A979049000B7758 /* MessagesView.swift in Sources */,
+				87ABC4702AA2491C00E5E022 /* RegistrationView.swift in Sources */,
+				87ABC4742AA2527700E5E022 /* LoginViewModel.swift in Sources */,
 				8769CC952A9E1DBD0089004C /* NetworkRequestManager.swift in Sources */,
 				8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */,
 				8702CEC72A979035000B7758 /* CreateView.swift in Sources */,
 				873208682AA11BF900586B93 /* ProfileView.swift in Sources */,
 				87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */,
 				8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */,
+				87ABC46E2AA2491200E5E022 /* LoginView.swift in Sources */,
 				87E2AFBF2A9CEAC800461201 /* FieldValidator.swift in Sources */,
 				8769CC972A9FC0C60089004C /* KafkaMessagePublisher.swift in Sources */,
 				8702CEA92A9787DB000B7758 /* LetsTravelApp.swift in Sources */,
+				87ABC4722AA24A1400E5E022 /* InputView.swift in Sources */,
 				8769CC992AA1000F0089004C /* TabSelection.swift in Sources */,
 				8702CECC2A9792F5000B7758 /* HeaderView.swift in Sources */,
 			);

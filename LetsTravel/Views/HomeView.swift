@@ -21,6 +21,7 @@ struct HomeView: View {
     
     var body: some View{
         VStack(spacing: 0.0){
+            HeaderView()
             searchView
             continentFilter
             Spacer()

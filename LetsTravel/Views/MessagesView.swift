@@ -12,6 +12,7 @@ struct MessagesView: View {
     var body: some View{
         NavigationView{
             VStack{
+                HeaderView()
                 messageView
             }
         }

@@ -21,8 +21,10 @@ struct CreateView: View {
 
     var body: some View{
         ZStack {
+            
             Color.white
             VStack(alignment: .leading){
+                HeaderView()
                 ZStack(alignment: .topLeading){
                         Form{
                             Section(header: Text("Create your own destination").font(.system(size: 24, weight: .semibold)).padding(.bottom, 20)) {

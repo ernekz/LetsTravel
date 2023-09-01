@@ -12,7 +12,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack(spacing: 0.0){
-                HeaderView()
                 NavigationBarBottom()
             }
         }
