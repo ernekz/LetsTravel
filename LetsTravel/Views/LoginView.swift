@@ -11,6 +11,8 @@ struct LoginView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @State private var test = ""
+    
     var body: some View {
         NavigationView{
             
@@ -28,12 +30,14 @@ struct LoginView: View {
                 VStack(spacing: 24){
                     InputView(text: $email,
                               title: "Email Address",
-                              placeholder: "name@example.com")
+                              placeholder: "name@example.com",
+                    error: test ?? "")
                     .autocapitalization(.none)
                     
                     InputView(text: $password,
                               title: "Password",
                               placeholder: "Enter your Password",
+                              error: test ?? "",
                               isSecureField: true)
                 }
                 .padding(.horizontal)

@@ -20,6 +20,8 @@
 		8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */; };
 		8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED02A97ACDC000B7758 /* DestinationCard.swift */; };
 		8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED22A97AD33000B7758 /* DestinationData.swift */; };
+		872A11DC2AA62A77004E0D29 /* RegistrationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A11DB2AA62A77004E0D29 /* RegistrationInput.swift */; };
+		872A11DE2AA64591004E0D29 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A11DD2AA64591004E0D29 /* UserService.swift */; };
 		873208682AA11BF900586B93 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873208672AA11BF900586B93 /* ProfileView.swift */; };
 		8732086A2AA1236900586B93 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873208692AA1236900586B93 /* FeedView.swift */; };
 		8732086C2AA1238800586B93 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8732086B2AA1238800586B93 /* ChatView.swift */; };
@@ -58,6 +60,8 @@
 		8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBottom.swift; sourceTree = "<group>"; };
 		8702CED02A97ACDC000B7758 /* DestinationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCard.swift; sourceTree = "<group>"; };
 		8702CED22A97AD33000B7758 /* DestinationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationData.swift; sourceTree = "<group>"; };
+		872A11DB2AA62A77004E0D29 /* RegistrationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInput.swift; sourceTree = "<group>"; };
+		872A11DD2AA64591004E0D29 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		873208672AA11BF900586B93 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		873208692AA1236900586B93 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		8732086B2AA1238800586B93 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				87F73AE52A98FEA40078B7A5 /* CreateDestinationInput.swift */,
 				87ACD6DF2A9911B500A08F44 /* Continent.swift */,
 				87ACD6E72A9CB54B00A08F44 /* Destination.swift */,
+				872A11DB2AA62A77004E0D29 /* RegistrationInput.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				87ACD6E32A9912A100A08F44 /* ContinentService.swift */,
 				87ACD6E52A9CB4E900A08F44 /* DestinationService.swift */,
 				8769CC942A9E1DBD0089004C /* NetworkRequestManager.swift */,
+				872A11DD2AA64591004E0D29 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				87ABC4762AA2528000E5E022 /* RegisterViewModel.swift in Sources */,
 				8702CEB22A9787DC000B7758 /* Persistence.swift in Sources */,
 				87F73AE62A98FEA40078B7A5 /* CreateDestinationInput.swift in Sources */,
+				872A11DE2AA64591004E0D29 /* UserService.swift in Sources */,
 				8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */,
 				8732086C2AA1238800586B93 /* ChatView.swift in Sources */,
 				87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */,
@@ -312,6 +319,7 @@
 				87F73AE42A98FDF20078B7A5 /* CreateViewModel.swift in Sources */,
 				87ACD6E82A9CB54B00A08F44 /* Destination.swift in Sources */,
 				87ACD6E62A9CB4E900A08F44 /* DestinationService.swift in Sources */,
+				872A11DC2AA62A77004E0D29 /* RegistrationInput.swift in Sources */,
 				8732086A2AA1236900586B93 /* FeedView.swift in Sources */,
 				8702CEAB2A9787DB000B7758 /* ContentView.swift in Sources */,
 				8702CEC52A979019000B7758 /* HomeView.swift in Sources */,

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RegistrationView: View {
     
+    @StateObject private var viewModel = RegisterViewModel()
+    
     @State private var email = ""
     @State private var fullName = ""
     @State private var password = ""
@@ -27,23 +29,27 @@ struct RegistrationView: View {
             //Input fields
             
             VStack(spacing: 24){
-                InputView(text: $email,
+                InputView(text: $viewModel.registrationInput.email,
                           title: "Email Address",
-                          placeholder: "name@example.com")
+                          placeholder: "name@example.com",
+                          error: viewModel.email.errorMessage ?? "")
                 .autocapitalization(.none)
                 
-                InputView(text: $fullName,
+                InputView(text: $viewModel.registrationInput.fullName,
                           title: "Full Name",
-                          placeholder: "Enter your name")
+                          placeholder: "Enter your name",
+                          error: viewModel.fullName.errorMessage ?? "")
                 
-                InputView(text: $password,
+                InputView(text: $viewModel.passwordToBeHashed,
                           title: "Password",
                           placeholder: "Enter your Password",
+                          error: viewModel.password.errorMessage ?? "",
                           isSecureField: true)
                 
-                InputView(text: $confirmPassword,
+                InputView(text: $viewModel.confirmPassword,
                           title: "Confirm Password",
                           placeholder: "Confirm your Password",
+                          error: viewModel.rePassword.errorMessage ?? "",
                           isSecureField: true)
             }
             .padding(.horizontal)
@@ -56,7 +62,14 @@ struct RegistrationView: View {
             
             
             Button{
-                
+                viewModel.checkEmailAvailability()
+                viewModel.submitRegistration { success in
+                    if success{
+                        print("Successful registration")
+                    } else {
+                        print("Registration failed")
+                    }
+                }
             } label: {
                 HStack{
                     Text("Sign up")

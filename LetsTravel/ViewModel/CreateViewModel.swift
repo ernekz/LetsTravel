@@ -61,10 +61,7 @@ class CreateViewModel: ObservableObject {
             completion(false)
             return
         }
-            print("Submitting...")
-            print("Country: \(createInput.country)")
-        print("Continent ID: \(createInput.continentId)")
-            print("User ID: \(createInput.createdBy)")
+            
             print("City: \(createInput.city)")
             print("People: \(createInput.people)")
             print("Start Date: \(createInput.leavingDate)")
