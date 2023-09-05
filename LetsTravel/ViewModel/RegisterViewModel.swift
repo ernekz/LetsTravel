@@ -80,15 +80,16 @@ class RegisterViewModel: ObservableObject {
     }
     
     
-    func checkEmailAvailability(){
-
+    func checkEmailAvailability(completion: @escaping (Bool) -> Void){
         userService.checkEmailAvailability(email: registrationInput.email) { [weak self] result in
                 DispatchQueue.main.async {
                     switch result{
                     case .success(let isAvailable):
                         self?.isEmailFree = isAvailable
+                        completion(isAvailable)
                     case .failure(let error):
                         print("Error checking email availability: \(error)")
+                        completion(false)
                     }
 
                 }
@@ -111,7 +112,9 @@ class RegisterViewModel: ObservableObject {
         
         // calling api to register user
         
+        
         userService.registerUser(newRegister: registrationInput, completion: completion)
+       
         
     }
 }

@@ -11,10 +11,12 @@ import SwiftUI
 struct HeaderView: View {
     var body: some View {
             HStack{
-                Image("avatars")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .padding(.leading, 10)
+                NavigationLink(destination: ProfileView()){
+                    Image("avatars")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .padding(.leading, 10)
+                }.navigationBarBackButtonHidden(true)
                 
                 Spacer()
                 
@@ -24,9 +26,10 @@ struct HeaderView: View {
                     .font(.system(size:16))
                 
                 Spacer()
-                
-                Image(systemName: "bell.fill")
-                    .padding(.trailing, 10)
+                NavigationLink(destination: NotificationView()){
+                    Image(systemName: "bell.fill")
+                        .padding(.trailing, 10)
+                }.navigationBarBackButtonHidden(true)
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 3)

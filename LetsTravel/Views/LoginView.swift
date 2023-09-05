@@ -9,9 +9,13 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State private var email = ""
-    @State private var password = ""
+
     @State private var test = ""
+    
+    @StateObject private var viewModel = LoginViewModel()
+    
+    
+    
     
     var body: some View {
         NavigationView{
@@ -28,13 +32,13 @@ struct LoginView: View {
                 //Input fields
                 
                 VStack(spacing: 24){
-                    InputView(text: $email,
+                    InputView(text: $viewModel.loginInput.email,
                               title: "Email Address",
                               placeholder: "name@example.com",
                     error: test ?? "")
                     .autocapitalization(.none)
                     
-                    InputView(text: $password,
+                    InputView(text: $viewModel.passwordToBehashed,
                               title: "Password",
                               placeholder: "Enter your Password",
                               error: test ?? "",
@@ -50,7 +54,13 @@ struct LoginView: View {
                 
                 
                 Button{
-                    
+                    viewModel.login{success in
+                        if success {
+                            print("Successful registration")
+                        } else {
+                            print("Registration failed")
+                        }
+                    }
                 } label: {
                     HStack{
                         Text("Sign in")

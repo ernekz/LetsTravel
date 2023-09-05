@@ -62,7 +62,7 @@ class UserService{
                 case .success:
                     completion(true)
                 case .failure(let error):
-                    print("Error creating destiantion: \(error)")
+                    print("Error creating user: \(error)")
                     completion(false)
                 }
             }
@@ -70,6 +70,46 @@ class UserService{
             print("Error encoding user: \(error)")
             completion(false)
         }
+    }
+    
+    func loginUser(newLogin: LoginInput, completion: @escaping (Result<String, Error>) -> Void){
+        guard let url = createURL(with: "/login") else {
+            completion(.failure(NetworkError.requestFailed))
+            print("request failed")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(newLogin)
+            request.httpBody = jsonData
+            
+            print("Json data: \(jsonData)")
+            
+            networkRequestManager.performPostRequest(url: url, requestData: request) { result in
+                switch result {
+                case .success(let data):
+                    if let token = String(data: data, encoding: .utf8){
+                        UserDefaults.standard.set(token, forKey: "jwtToken")
+                        completion(.success(token))
+                    }else {
+                        completion(.failure(NetworkError.emptyData))
+                    }
+                case .failure(let error):
+                    print("Error loging user : \(error)")
+                    completion(.failure(NetworkError.decodingFailed))
+                }
+            }
+            
+            
+        } catch {
+            print("Error encoding login: \(error)")
+            completion(.failure(error))
+        }
+        
     }
     
     

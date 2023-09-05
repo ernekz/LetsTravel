@@ -11,6 +11,8 @@ struct RegistrationView: View {
     
     @StateObject private var viewModel = RegisterViewModel()
     
+    @State private var showAlert = false
+    
     @State private var email = ""
     @State private var fullName = ""
     @State private var password = ""
@@ -62,14 +64,20 @@ struct RegistrationView: View {
             
             
             Button{
-                viewModel.checkEmailAvailability()
-                viewModel.submitRegistration { success in
-                    if success{
-                        print("Successful registration")
-                    } else {
-                        print("Registration failed")
+                viewModel.checkEmailAvailability { isEmailFree in
+                        if isEmailFree {
+                            viewModel.submitRegistration { success in
+                                if success {
+                                    showAlert = true
+                                    print("Successful registration")
+                                } else {
+                                    print("Registration failed")
+                                }
+                            }
+                        } else {
+                            print("Email is already taken")
+                        }
                     }
-                }
             } label: {
                 HStack{
                     Text("Sign up")
@@ -82,6 +90,18 @@ struct RegistrationView: View {
             .background(Color(.systemBlue))
             .cornerRadius(15)
             .padding(.top, 24)
+            .alert(isPresented: $showAlert){
+             Alert(
+                
+                title: Text("Registration successful"),
+                message: Text("Your registration was successful. You can now log in."),
+                primaryButton: .default(Text("OK")){
+                    dismiss()
+                },
+                secondaryButton: .cancel()
+             )
+                
+            }
             
             Spacer()
             
