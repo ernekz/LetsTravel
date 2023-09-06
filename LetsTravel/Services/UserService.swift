@@ -113,4 +113,30 @@ class UserService{
     }
     
     
+    func logoutUser(completion: @escaping (Bool) -> Void){
+        guard let url = createURL(with: "/logout") else {
+            print("request failed")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken"){
+            request.setValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
+        }
+        
+        networkRequestManager.performPostRequest(url: url, requestData: request){ result in
+            switch result{
+            case .success:
+                UserDefaults.standard.removeObject(forKey: "jwtToken")
+                completion(true)
+            case .failure(let error):
+                print("Error logging out: \(error)")
+                completion(false)
+            }
+        }
+    }
 }

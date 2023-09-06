@@ -50,4 +50,19 @@ class LoginViewModel: ObservableObject{
         }
     }
     
+    func logout(completion: @escaping (Bool) -> Void){
+        
+        print("Logging out")
+        
+        userService.logoutUser{ success in
+            if success {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+        
+        
+    }
+    
 }

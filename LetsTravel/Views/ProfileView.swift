@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject private var viewModel = LoginViewModel()
+    
+    
     var body: some View {
         VStack{
-            Text("Hello, World!")
-            
             Button{
-                
+                viewModel.logout{ success in
+                    if success {
+                        print("Loggout success")
+                    } else {
+                        print("Logout failed")
+                    }
+                }
             } label: {
-                
+                Text("Logout")
             }
         }
         
