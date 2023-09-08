@@ -20,6 +20,7 @@
 		8702CECE2A97996F000B7758 /* NavigationBarBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */; };
 		8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED02A97ACDC000B7758 /* DestinationCard.swift */; };
 		8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED22A97AD33000B7758 /* DestinationData.swift */; };
+		870739A12AAB2FDD00873CE5 /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870739A02AAB2FDD00873CE5 /* DestinationCell.swift */; };
 		872A11DC2AA62A77004E0D29 /* RegistrationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A11DB2AA62A77004E0D29 /* RegistrationInput.swift */; };
 		872A11DE2AA64591004E0D29 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A11DD2AA64591004E0D29 /* UserService.swift */; };
 		8732086A2AA1236900586B93 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873208692AA1236900586B93 /* FeedView.swift */; };
@@ -62,6 +63,7 @@
 		8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBottom.swift; sourceTree = "<group>"; };
 		8702CED02A97ACDC000B7758 /* DestinationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCard.swift; sourceTree = "<group>"; };
 		8702CED22A97AD33000B7758 /* DestinationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationData.swift; sourceTree = "<group>"; };
+		870739A02AAB2FDD00873CE5 /* DestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
 		872A11DB2AA62A77004E0D29 /* RegistrationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInput.swift; sourceTree = "<group>"; };
 		872A11DD2AA64591004E0D29 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		873208692AA1236900586B93 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				8732086B2AA1238800586B93 /* ChatView.swift */,
 				87ABC46B2AA238B400E5E022 /* FeedCell.swift */,
 				87ABC4712AA24A1400E5E022 /* InputView.swift */,
+				870739A02AAB2FDD00873CE5 /* DestinationCell.swift */,
 			);
 			path = AdditionalViews;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				8702CEA92A9787DB000B7758 /* LetsTravelApp.swift in Sources */,
 				87ABC4722AA24A1400E5E022 /* InputView.swift in Sources */,
 				8769CC992AA1000F0089004C /* TabSelection.swift in Sources */,
+				870739A12AAB2FDD00873CE5 /* DestinationCell.swift in Sources */,
 				8702CECC2A9792F5000B7758 /* HeaderView.swift in Sources */,
 				87BCF9022AA7B1BD007F5F75 /* NotificationView.swift in Sources */,
 			);

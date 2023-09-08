@@ -15,7 +15,7 @@ class DestinationService {
     
     private init(){}
     
-    private let baseURL = "http://localhost:8080/api/destination"
+    private let baseURL = "http://localhost:8080/api/v1/destination"
     
     private func createURL(with path: String) -> URL? {
         return URL(string: baseURL + path)

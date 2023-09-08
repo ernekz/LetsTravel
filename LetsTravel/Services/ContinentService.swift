@@ -10,7 +10,7 @@ import Foundation
 class ContinentService {
     func fetchContinents(completion: @escaping ([Continent]?) -> Void){
         
-        guard let url = URL(string: "http://localhost:8080/api/continents/getAll") else {
+        guard let url = URL(string: "http://localhost:8080/api/v1/continents/getAll") else {
             completion(nil)
             return
         }
