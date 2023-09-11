@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DestinationCell: View {
     let item: Destination
-    var isLiked = false
+    let isLiked: Bool
     var body: some View {
         VStack{
             HStack{
@@ -30,7 +30,7 @@ struct DestinationCell: View {
                             .bold()
                         Spacer()
                         
-                        if isLiked{
+                        if !isLiked{
                             Button{
                                 
                             }label: {
@@ -107,6 +107,6 @@ struct DestinationCell_Previews: PreviewProvider {
     static var previews: some View {
         let sampleData = Destination(id: 1, continentId: 2, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUrl: "imgurl", description: "easy trip for a good vacation")
 
-        return DestinationCell(item: sampleData)
+        return DestinationCell(item: sampleData, isLiked: false)
     }
 }

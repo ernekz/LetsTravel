@@ -107,13 +107,13 @@ struct ProfileView: View {
                             }
                         } else if state == .Destinations{
                             ForEach(profileViewModel.destinations, id: \.id) { destinations in
-                                DestinationCell(item:destinations)
+                                DestinationCell(item:destinations, isLiked: false)
                                     .padding(.bottom, 2)
                             }
                             
                         } else if state == .Likes{
                             ForEach(profileViewModel.destinations, id: \.id) { destinations in
-                                DestinationCell(item: destinations)
+                                DestinationCell(item: destinations, isLiked: true)
                             }
                             
                         }

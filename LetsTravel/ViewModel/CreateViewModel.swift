@@ -25,6 +25,7 @@ class CreateViewModel: ObservableObject {
             description: "",
             imageUrl: "image_url"
             )
+    
     @Published var selectedContinentId: Int = 1
     @Published var continents: [Continent] = []
     @Published var countryError = ""

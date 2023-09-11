@@ -45,6 +45,7 @@
 		87BCF9022AA7B1BD007F5F75 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF9012AA7B1BD007F5F75 /* NotificationView.swift */; };
 		87E2AFBF2A9CEAC800461201 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */; };
 		87E2B1FC2AAF9EA400499A27 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2B1FB2AAF9EA400499A27 /* ProfileViewModel.swift */; };
+		87E2B1FE2AAFAB4900499A27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2B1FD2AAFAB4900499A27 /* User.swift */; };
 		87F73AE42A98FDF20078B7A5 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F73AE32A98FDF20078B7A5 /* CreateViewModel.swift */; };
 		87F73AE62A98FEA40078B7A5 /* CreateDestinationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F73AE52A98FEA40078B7A5 /* CreateDestinationInput.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		87BCF9012AA7B1BD007F5F75 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		87E2B1FB2AAF9EA400499A27 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		87E2B1FD2AAFAB4900499A27 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		87F73AE32A98FDF20078B7A5 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		87F73AE52A98FEA40078B7A5 /* CreateDestinationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDestinationInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				87ACD6E72A9CB54B00A08F44 /* Destination.swift */,
 				872A11DB2AA62A77004E0D29 /* RegistrationInput.swift */,
 				87AE347D2AA7A4BF00549D54 /* LoginInput.swift */,
+				87E2B1FD2AAFAB4900499A27 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				87ABC4742AA2527700E5E022 /* LoginViewModel.swift in Sources */,
 				8769CC952A9E1DBD0089004C /* NetworkRequestManager.swift in Sources */,
 				8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */,
+				87E2B1FE2AAFAB4900499A27 /* User.swift in Sources */,
 				8702CEC72A979035000B7758 /* CreateView.swift in Sources */,
 				87ACD6E02A9911B500A08F44 /* Continent.swift in Sources */,
 				8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */,

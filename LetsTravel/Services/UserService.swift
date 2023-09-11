@@ -185,7 +185,18 @@ class UserService{
             }
         }.resume()
     }
+    
+    
+    func fetchCurrentUser(completion: @escaping ([User]?) -> Void) {
+        guard let url = createURL(with: "/getUser") else{
+            completion(nil)
+            return
+        }
+        
+        
+    }
 
+    // For testing purposes
     func curlEquivalent(for request: URLRequest) -> String? {
         var curlCommand = "curl"
         
