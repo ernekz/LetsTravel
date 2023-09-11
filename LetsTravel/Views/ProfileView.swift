@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     @StateObject private var viewModel = LoginViewModel()
     
+    @StateObject private var profileViewModel = ProfileViewModel()
+    
     @State private var state: activeButton = .Posts
     
     @State private var isActionSheetVisible = false
@@ -104,14 +106,14 @@ struct ProfileView: View {
                                     .frame(width: 400)
                             }
                         } else if state == .Destinations{
-                            ForEach(0 ... 10, id: \.self) { destinations in
-                                DestinationCell()
+                            ForEach(profileViewModel.destinations, id: \.id) { destinations in
+                                DestinationCell(item:destinations)
                                     .padding(.bottom, 2)
                             }
                             
                         } else if state == .Likes{
-                            ForEach(0 ... 10, id: \.self) { destinations in
-                                DestinationCell()
+                            ForEach(profileViewModel.destinations, id: \.id) { destinations in
+                                DestinationCell(item: destinations)
                             }
                             
                         }
@@ -134,6 +136,8 @@ struct ProfileView: View {
                 }
             
             
+        }.onAppear{
+            profileViewModel.fetchUserDestinations()
         }
     }
 }

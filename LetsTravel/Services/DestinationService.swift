@@ -89,6 +89,48 @@ class DestinationService {
         
     }
     
+    
+    func fetchDestinationsCurrentUser(completion: @escaping ([Destination]?) -> Void){
+        guard let url = createURL(with: "/byCurrentUser") else {
+            completion(nil)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken") {
+            // Remove the "token" key from the JWT token string
+            let cleanedJwtToken = jwtToken.replacingOccurrences(of: "{\"token\":\"", with: "").replacingOccurrences(of: "\"}", with: "")
+            request.setValue("Bearer \(cleanedJwtToken)", forHTTPHeaderField: "Authorization")
+        } else {
+            print("JWT Token not found")
+        }
+        
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error{
+                print("Error fetching destinations by current user: \(error)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                completion(nil)
+                return
+            }
+            
+            do{
+                let destinations = try JSONDecoder().decode([Destination].self, from: data)
+                completion(destinations)
+            } catch {
+                print("Error decoding destinations: \(error)")
+                completion(nil)
+            }
+            
+        }.resume()
+    }
+    
+    
     //Fetching Kafka messages about newly created destinations for real-time update
     
     func fetchKafkaMessages(completion: @escaping ([Destination]?) -> Void){

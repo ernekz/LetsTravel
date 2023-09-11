@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DestinationCell: View {
+    let item: Destination
     var isLiked = false
     var body: some View {
         VStack{
@@ -21,10 +22,10 @@ struct DestinationCell: View {
                 
                 VStack{
                     HStack(alignment: .top){
-                        Text("Paris,")
+                        Text("\(item.city)")
                             .font(.system(size: 20))
                             .bold()
-                        Text("France")
+                        Text("\(item.country)")
                             .font(.system(size: 20))
                             .bold()
                         Spacer()
@@ -54,7 +55,7 @@ struct DestinationCell: View {
                             .font(.system(size: 14))
                         
                         Spacer()
-                        Text("2020-09-30")
+                        Text(item.leavingDate!)
                             .font(.system(size: 14))
                         
                     }
@@ -63,7 +64,7 @@ struct DestinationCell: View {
                             .font(.system(size: 14))
                         
                         Spacer()
-                        Text("2020-09-30")
+                        Text(item.returningDate!)
                             .font(.system(size: 14))
                     }
                     
@@ -72,7 +73,7 @@ struct DestinationCell: View {
                             .font(.system(size: 14))
                         Spacer()
                         
-                        Text("1/5")
+                        Text("\(item.people)")
                             .font(.system(size: 14))
                         
                         Spacer()
@@ -85,7 +86,7 @@ struct DestinationCell: View {
                                 .font(.system(size: 14))
                             Spacer()
                         }
-                        Text("Traveling to Paris for 10 days to see eiffel tower and its surroundings")
+                        Text("\(item.description)")
                             .font(.system(size: 14))
                     }
                     .padding(.top, 1)
@@ -104,6 +105,8 @@ struct DestinationCell: View {
 
 struct DestinationCell_Previews: PreviewProvider {
     static var previews: some View {
-        DestinationCell()
+        let sampleData = Destination(id: 1, continentId: 2, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUrl: "imgurl", description: "easy trip for a good vacation")
+
+        return DestinationCell(item: sampleData)
     }
 }
