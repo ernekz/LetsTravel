@@ -139,4 +139,83 @@ class UserService{
             }
         }
     }
+    
+    func userId(completion: @escaping (Int64?) -> Void) {
+        guard let url = createURL(with: "/idCurrentUser") else {
+            print("Request URL creation failed")
+            completion(nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+            if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken") {
+                // Remove the "token" key from the JWT token string
+                let cleanedJwtToken = jwtToken.replacingOccurrences(of: "{\"token\":\"", with: "").replacingOccurrences(of: "\"}", with: "")
+                request.setValue("Bearer \(cleanedJwtToken)", forHTTPHeaderField: "Authorization")
+            } else {
+                print("JWT Token not found")
+            }
+        request.httpMethod = "GET" // You might need to set the HTTP method explicitly to GET
+        
+        
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error fetching user ID: \(error)")
+                completion(nil)
+                return
+            }
+
+            guard let data = data else {
+                print("No data received")
+                completion(nil)
+                return
+            }
+
+            if let responseString = String(data: data, encoding: .utf8) {
+                if let id = Int64(responseString) {
+                    completion(id)
+                } else {
+                    print("Error converting response to Int64")
+                    completion(nil)
+                }
+            } else {
+                print("Error decoding response data")
+                completion(nil)
+            }
+        }.resume()
+    }
+
+    func curlEquivalent(for request: URLRequest) -> String? {
+        var curlCommand = "curl"
+        
+        // Add headers
+        if let allHTTPHeaderFields = request.allHTTPHeaderFields {
+            for (key, value) in allHTTPHeaderFields {
+                curlCommand += " -H '\(key): \(value)'"
+            }
+        }
+        
+        // Add request method
+        if let httpMethod = request.httpMethod {
+            curlCommand += " -X \(httpMethod)"
+        }
+        
+        // Add request URL
+        if let url = request.url {
+            curlCommand += " '\(url.absoluteString)'"
+        }
+        
+        // Add request body, if it exists
+        if let httpBody = request.httpBody, let bodyString = String(data: httpBody, encoding: .utf8) {
+            curlCommand += " -d '\(bodyString)'"
+        }
+        
+        return curlCommand
+    }
+
+}
+
+struct UserIdResponse: Decodable {
+    let id: Int64
 }

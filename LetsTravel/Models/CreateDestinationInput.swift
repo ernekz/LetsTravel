@@ -10,7 +10,7 @@ import Foundation
 struct CreateDestinationInput: Encodable {
     var country: String
     var continentId: Int
-    var createdBy: Int
+    var createdBy: Int64
     var city: String
     var people: String
     var leavingDate: String

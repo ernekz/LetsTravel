@@ -14,14 +14,12 @@ struct CreateView: View {
     
     @State private var showAlert = false
     @State private var alertMessage = ""
-    @State private var navigateToHome = false
     
     @EnvironmentObject var tabSelection: TabSelection
     
 
     var body: some View{
         ZStack {
-            
             Color.white
             VStack(alignment: .leading){
                 HeaderView()
@@ -152,9 +150,7 @@ struct CreateView: View {
                                         if success {
                                             print("Papa papsiku")
                                             alertMessage = "Destination has been created"
-                                            
                                             showAlert = true
-                                            
                                         } else {
                                             print("ne papa papisku")
                                         }
@@ -187,7 +183,9 @@ struct CreateView: View {
                     viewModel.cleanTheForm()
                     resetFocus()
                 }
-            }
+        }.onAppear{
+            viewModel.fetchId()
+        }
     }
 }
 

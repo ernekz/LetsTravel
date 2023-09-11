@@ -12,11 +12,12 @@ class CreateViewModel: ObservableObject {
     
     private let continentService = ContinentService()
     private let destinationService = DestinationService.shared
+    private let userService = UserService.shared
     
     @Published var createInput = CreateDestinationInput(
             country: "",
             continentId: 0,
-            createdBy: 123,
+            createdBy: 0,
             city: "",
             people: "",
             leavingDate: "",
@@ -67,6 +68,7 @@ class CreateViewModel: ObservableObject {
             print("Start Date: \(createInput.leavingDate)")
             print("End Date: \(createInput.returningDate)")
             print("Description: \(createInput.description)")
+        print("createdBy: \(createInput.createdBy)")
         
         destinationService.createDestination(newDestination: createInput, completion: completion)
         
@@ -98,5 +100,15 @@ class CreateViewModel: ObservableObject {
         rDate = Date()
     }
     
+    func fetchId(){
+        userService.userId{ userId in
+            
+            if let userId = userId {
+                self.createInput.createdBy = userId
+            } else {
+                print("Failed to fetch user ID")
+            }
+        }
+    }
     
 }

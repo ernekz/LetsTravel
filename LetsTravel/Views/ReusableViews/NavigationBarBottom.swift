@@ -10,6 +10,7 @@ import SwiftUI
 
 struct NavigationBarBottom: View {
     @State private var selectedTab: Int = 0
+    @State private var isLinkActive: Bool = false
     @EnvironmentObject private var tabSelection: TabSelection
     var body: some View{
         TabView {
