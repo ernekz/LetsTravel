@@ -17,6 +17,9 @@ struct CreateView: View {
     
     @EnvironmentObject var tabSelection: TabSelection
     
+    
+    @State private var isImagePickerPresented = false
+    
 
     var body: some View{
         ZStack {
@@ -144,6 +147,18 @@ struct CreateView: View {
                                     }
                                 }
                                 
+                                if let image = viewModel.selectedImage{
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 200, height: 200)
+                                } else {
+                                    Text("No image selected")
+                                }
+                                Button("Select Image"){
+                                    isImagePickerPresented.toggle()
+                                }
+                                
                                 
                                 Button("Submit"){
                                     viewModel.submit{ success in
@@ -174,6 +189,8 @@ struct CreateView: View {
                                     }.id(UUID())
                                 
                                 
+                            }.sheet(isPresented: $isImagePickerPresented){
+                                ImagePicker(selectedImage: $viewModel.selectedImage)
                             }
                             
                         }

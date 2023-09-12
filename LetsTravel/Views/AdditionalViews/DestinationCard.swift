@@ -105,7 +105,7 @@ struct DestinationCard: View{
 
 struct DestinationCardView_Preview: PreviewProvider{
     static var previews: some View{
-        let sampleData = Destination(id: 1, continentId: 2, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUrl: "imgurl", description: "easy trip for a good vacation")
+        let sampleData = Destination(id: 1, continentId: 2, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUrl: Data(), description: "easy trip for a good vacation")
         return DestinationCard(item: sampleData)
             .previewLayout(.sizeThatFits)
     }

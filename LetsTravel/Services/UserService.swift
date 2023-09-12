@@ -187,13 +187,43 @@ class UserService{
     }
     
     
-    func fetchCurrentUser(completion: @escaping ([User]?) -> Void) {
+    func fetchCurrentUser(completion: @escaping (User?) -> Void) {
         guard let url = createURL(with: "/getUser") else{
             completion(nil)
             return
         }
         
+        var request = URLRequest(url:url)
+        if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken") {
+            let cleanedToken = jwtToken.replacingOccurrences(of: "{\"token\":\"", with: "").replacingOccurrences(of: "\"}", with: "")
+            request.setValue("Bearer \(cleanedToken)", forHTTPHeaderField: "Authorization")
+        } else {
+            print("JWT Token not found")
+        }
         
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error fetching current user: \(error)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                completion(nil)
+                return
+            }
+            
+            do{
+                let user = try JSONDecoder().decode(User.self, from: data)
+                completion(user)
+            } catch {
+                print("Error decoding user: \(error)")
+                completion(nil)
+            }
+        }.resume()
     }
 
     // For testing purposes

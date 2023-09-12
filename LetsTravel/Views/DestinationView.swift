@@ -13,6 +13,8 @@ struct DestinationView: View{
     let item: Destination
     @Environment(\.presentationMode) var presentationMode
     
+    
+    
     var body: some View {
         ScrollView{
             ZStack{
@@ -41,22 +43,24 @@ struct DestinationView: View{
     
     private var imageView: some View{
         ZStack(alignment: .topLeading){
-            Image("Eiffel-tower")
-                .resizable()
-                .ignoresSafeArea(edges: .top)
-                .frame(height:450)
-                .cornerRadius(45)
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left.circle.fill")
-                    .font(.system(size: 30))
-                    .foregroundColor(.black)
+            if let imageData = item.imageUrl, let image = UIImage(data: item.imageUrl!){
+                Image(uiImage: image)
+                    .resizable()
+                    .ignoresSafeArea(edges: .top)
+                    .frame(height:450)
+                    .cornerRadius(45)
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "arrow.left.circle.fill")
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
+                }
+                .padding(.top, 50)
+                .padding(.leading, 10)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitle("", displayMode: .inline)
             }
-            .padding(.top, 50)
-            .padding(.leading, 10)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitle("", displayMode: .inline)
         
             
             VStack{
@@ -182,7 +186,7 @@ struct DestinationView: View{
 
 struct DestinationView_Preview: PreviewProvider{
     static var previews: some View{
-        let sampleData = Destination(id: 1, continentId: 2, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUrl: "imgurl", description: "easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation")
+        let sampleData = Destination(id: 1, continentId: 2, city: "Paris", country: "France", people: 5, leavingDate: "2023-09-01", returningDate: "2023-09-10", imageUrl: Data(), description: "easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation easy trip for a good vacation")
         return DestinationView(item: sampleData)
             .previewLayout(.sizeThatFits)
     }

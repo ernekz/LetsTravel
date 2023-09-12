@@ -17,7 +17,7 @@ struct Destination: Identifiable, Decodable, Equatable, Hashable {
     let people: Int
     let leavingDate: String?
     let returningDate: String?
-    let imageUrl: String?
+    let imageUrl: Data?
     let description: String
     
 }

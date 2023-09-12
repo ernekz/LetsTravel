@@ -12,7 +12,11 @@ import SwiftUI
 struct FeedView: View {
     var body: some View{
         NavigationStack {
-            HeaderView() 
+            HeaderView()
+            //tool bar
+            HStack{
+                Text("Create Post")
+            }
             ScrollView{
                 LazyVStack(spacing: 32) {
                     ForEach(0 ... 10, id: \.self) { post in

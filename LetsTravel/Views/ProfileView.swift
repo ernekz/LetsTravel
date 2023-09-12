@@ -43,7 +43,13 @@ struct ProfileView: View {
                                 // Handle edit profile action
                             },
                             .default(Text("Logout")) {
-                                // Handle logout action
+                                viewModel.logout{ success in
+                                    if success {
+                                        print("Loggout success")
+                                    } else {
+                                        print("Logout failed")
+                                    }
+                                }
                             },
                             .cancel()
                         ])
@@ -61,7 +67,7 @@ struct ProfileView: View {
                 }
                 
                 HStack{
-                    Text("Ernestas Kazinevicius")
+                    Text("\(profileViewModel.user.fullName)")
                         .font(.title)
                         .padding(.leading)
                     Spacer()
@@ -115,29 +121,15 @@ struct ProfileView: View {
                             ForEach(profileViewModel.destinations, id: \.id) { destinations in
                                 DestinationCell(item: destinations, isLiked: true)
                             }
-                            
                         }
-                        
                     }
-                    
                 }
                 
                 Spacer()
-                Button{
-                    viewModel.logout{ success in
-                        if success {
-                            print("Loggout success")
-                        } else {
-                            print("Logout failed")
-                        }
-                    }
-                } label: {
-                    Text("Logout")
-                }
-            
-            
+    
         }.onAppear{
             profileViewModel.fetchUserDestinations()
+            profileViewModel.fetchUser()
         }
     }
 }

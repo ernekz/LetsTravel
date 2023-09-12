@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct User: Decodable, Hashable{
-    private var email: String
-    private var fullName: String
+struct User: Codable, Hashable{
+    let email: String
+    let fullName: String
     
 }

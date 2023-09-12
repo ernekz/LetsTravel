@@ -7,6 +7,7 @@
 
 import Foundation
 
+import SwiftUI
 
 class CreateViewModel: ObservableObject {
     
@@ -23,7 +24,7 @@ class CreateViewModel: ObservableObject {
             leavingDate: "",
             returningDate: "",
             description: "",
-            imageUrl: "image_url"
+            imageUrl: Data()
             )
     
     @Published var selectedContinentId: Int = 1
@@ -32,6 +33,7 @@ class CreateViewModel: ObservableObject {
     @Published var lDate = Date()
     @Published var rDate = Date()
     
+    @Published var selectedImage: UIImage?
     
     @Published var country = FieldValidator()
     @Published var continent = FieldValidator()
@@ -63,12 +65,17 @@ class CreateViewModel: ObservableObject {
             completion(false)
             return
         }
-            
+        guard let imageData = selectedImage?.jpegData(compressionQuality: 0.8) else {
+            completion(false)
+            return
+        }
+        createInput.imageUrl = imageData
             print("City: \(createInput.city)")
             print("People: \(createInput.people)")
             print("Start Date: \(createInput.leavingDate)")
             print("End Date: \(createInput.returningDate)")
             print("Description: \(createInput.description)")
+        print("Image data: \(createInput.imageUrl)")
         print("createdBy: \(createInput.createdBy)")
         
         destinationService.createDestination(newDestination: createInput, completion: completion)
@@ -95,7 +102,7 @@ class CreateViewModel: ObservableObject {
                 leavingDate: "",
                 returningDate: "",
                 description: "",
-                imageUrl: "image_url"
+                imageUrl: Data()
                 )
         lDate = Date()
         rDate = Date()

@@ -9,12 +9,24 @@ import Foundation
 
 class ProfileViewModel: ObservableObject{
     @Published var destinations: [Destination] = []
+    @Published var user: User = User(email: "", fullName: "")
     
     private let destinationService = DestinationService.shared
+    private let userService = UserService.shared
     
     
     func fetchUser(){
-        
+        userService.fetchCurrentUser{ [weak self] user in
+            DispatchQueue.main.async {
+                if let user = user {
+                    self?.user = user
+                    print("Fetched User: \(String(describing: self?.user))")
+                } else {
+                    print("User not found")
+                }
+                
+            }
+        }
         
     }
     

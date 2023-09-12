@@ -16,5 +16,5 @@ struct CreateDestinationInput: Encodable {
     var leavingDate: String
     var returningDate: String
     var description: String
-    var imageUrl: String
+    var imageUrl: Data
 }
