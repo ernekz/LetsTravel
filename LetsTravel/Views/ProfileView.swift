@@ -19,9 +19,16 @@ struct ProfileView: View {
     @State private var isClicked = false
     
     @State private var isMenuVisible = false
+    
+    @State private var isImagePickerPresented = false
+    
+    @State private var isEditProfileViewActive = false
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
+            
             ZStack{
+               
                 HStack{
                     Image("avatars")
                         .resizable()
@@ -40,7 +47,6 @@ struct ProfileView: View {
                     .actionSheet(isPresented: $isActionSheetVisible) {
                         ActionSheet(title: Text("Menu"), buttons: [
                             .default(Text("Edit Profile")) {
-                                // Handle edit profile action
                             },
                             .default(Text("Logout")) {
                                 viewModel.logout{ success in
@@ -54,9 +60,16 @@ struct ProfileView: View {
                             .cancel()
                         ])
                     }
-                    
+                    Button{
+                        isEditProfileViewActive = true
+                    }label: {
+                        Text("Edit profile")
+                    }
                     
                 }
+                NavigationLink("", destination: EditProfileView( isImagePresented: $isImagePickerPresented), isActive: $isEditProfileViewActive)
+                    .opacity(0)
+                    
             }
             
                 HStack{
@@ -130,7 +143,10 @@ struct ProfileView: View {
         }.onAppear{
             profileViewModel.fetchUserDestinations()
             profileViewModel.fetchUser()
+        
         }
+        
+
     }
 }
 

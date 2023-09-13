@@ -16,7 +16,8 @@ struct HeaderView: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                         .padding(.leading, 10)
-                }.navigationBarBackButtonHidden(true)
+                }
+                    
                 
                 Spacer()
                 

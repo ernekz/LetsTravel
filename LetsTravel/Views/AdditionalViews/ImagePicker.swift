@@ -10,11 +10,12 @@ import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage?
-    @Environment(\.presentationMode) var presentationMode
+    @Binding var isPresented: Bool
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
+        picker.isNavigationBarHidden = true
         return picker
     }
     
@@ -35,7 +36,11 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let selectedImage = info[.originalImage] as? UIImage {
                 parent.selectedImage = selectedImage
             }
-            parent.presentationMode.wrappedValue.dismiss()
+            DispatchQueue.main.async {
+                self.parent.isPresented = false
+            }
+            
+            
         }
     }
 }

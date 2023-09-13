@@ -190,7 +190,7 @@ struct CreateView: View {
                                 
                                 
                             }.sheet(isPresented: $isImagePickerPresented){
-                                ImagePicker(selectedImage: $viewModel.selectedImage)
+                                ImagePicker(selectedImage: $viewModel.selectedImage, isPresented: $isImagePickerPresented)
                             }
                             
                         }

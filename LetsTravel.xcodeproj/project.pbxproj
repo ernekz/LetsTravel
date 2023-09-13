@@ -21,6 +21,9 @@
 		8702CED12A97ACDC000B7758 /* DestinationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED02A97ACDC000B7758 /* DestinationCard.swift */; };
 		8702CED32A97AD33000B7758 /* DestinationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702CED22A97AD33000B7758 /* DestinationData.swift */; };
 		870739A12AAB2FDD00873CE5 /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870739A02AAB2FDD00873CE5 /* DestinationCell.swift */; };
+		871AA5E02AB1A87B00F2EB8E /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AA5DF2AB1A87B00F2EB8E /* EditProfileView.swift */; };
+		871AA5E22AB1ACFE00F2EB8E /* EditProfileRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AA5E12AB1ACFE00F2EB8E /* EditProfileRowView.swift */; };
+		871AA5E42AB1C63500F2EB8E /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AA5E32AB1C63500F2EB8E /* ViewRouter.swift */; };
 		872A11DC2AA62A77004E0D29 /* RegistrationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A11DB2AA62A77004E0D29 /* RegistrationInput.swift */; };
 		872A11DE2AA64591004E0D29 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A11DD2AA64591004E0D29 /* UserService.swift */; };
 		8732086A2AA1236900586B93 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873208692AA1236900586B93 /* FeedView.swift */; };
@@ -67,6 +70,9 @@
 		8702CED02A97ACDC000B7758 /* DestinationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCard.swift; sourceTree = "<group>"; };
 		8702CED22A97AD33000B7758 /* DestinationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationData.swift; sourceTree = "<group>"; };
 		870739A02AAB2FDD00873CE5 /* DestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
+		871AA5DF2AB1A87B00F2EB8E /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		871AA5E12AB1ACFE00F2EB8E /* EditProfileRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRowView.swift; sourceTree = "<group>"; };
+		871AA5E32AB1C63500F2EB8E /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		872A11DB2AA62A77004E0D29 /* RegistrationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInput.swift; sourceTree = "<group>"; };
 		872A11DD2AA64591004E0D29 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		873208692AA1236900586B93 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 				87ABC46F2AA2491C00E5E022 /* RegistrationView.swift */,
 				87BCF8FF2AA7B106007F5F75 /* ProfileView.swift */,
 				87BCF9012AA7B1BD007F5F75 /* NotificationView.swift */,
+				871AA5DF2AB1A87B00F2EB8E /* EditProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 			children = (
 				8702CECB2A9792F5000B7758 /* HeaderView.swift */,
 				8702CECD2A97996F000B7758 /* NavigationBarBottom.swift */,
+				871AA5E32AB1C63500F2EB8E /* ViewRouter.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 				87ABC4712AA24A1400E5E022 /* InputView.swift */,
 				870739A02AAB2FDD00873CE5 /* DestinationCell.swift */,
 				8795E7D22AB0AE48009691A6 /* ImagePicker.swift */,
+				871AA5E12AB1ACFE00F2EB8E /* EditProfileRowView.swift */,
 			);
 			path = AdditionalViews;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 				87ABC4702AA2491C00E5E022 /* RegistrationView.swift in Sources */,
 				87ABC4742AA2527700E5E022 /* LoginViewModel.swift in Sources */,
 				8769CC952A9E1DBD0089004C /* NetworkRequestManager.swift in Sources */,
+				871AA5E02AB1A87B00F2EB8E /* EditProfileView.swift in Sources */,
 				8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */,
 				87E2B1FE2AAFAB4900499A27 /* User.swift in Sources */,
 				8702CEC72A979035000B7758 /* CreateView.swift in Sources */,
@@ -358,11 +368,13 @@
 				8769CC972A9FC0C60089004C /* KafkaMessagePublisher.swift in Sources */,
 				8702CEA92A9787DB000B7758 /* LetsTravelApp.swift in Sources */,
 				87ABC4722AA24A1400E5E022 /* InputView.swift in Sources */,
+				871AA5E42AB1C63500F2EB8E /* ViewRouter.swift in Sources */,
 				8769CC992AA1000F0089004C /* TabSelection.swift in Sources */,
 				870739A12AAB2FDD00873CE5 /* DestinationCell.swift in Sources */,
 				8795E7D32AB0AE48009691A6 /* ImagePicker.swift in Sources */,
 				8702CECC2A9792F5000B7758 /* HeaderView.swift in Sources */,
 				87BCF9022AA7B1BD007F5F75 /* NotificationView.swift in Sources */,
+				871AA5E22AB1ACFE00F2EB8E /* EditProfileRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

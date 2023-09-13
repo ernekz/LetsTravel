@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ProfileViewModel: ObservableObject{
     @Published var destinations: [Destination] = []
@@ -13,6 +14,8 @@ class ProfileViewModel: ObservableObject{
     
     private let destinationService = DestinationService.shared
     private let userService = UserService.shared
+    
+    @Published var selectedImage: UIImage?
     
     
     func fetchUser(){
