@@ -11,13 +11,11 @@ struct EditProfileView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel = ProfileViewModel()
     @State private var isImagePickerPresented = false
-    @Binding var isImagePresented: Bool
     @State private var fullName = ""
     @State private var bio = ""
     @State private var password = ""
     @State private var confirmPassword = ""
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         
         VStack{
@@ -26,8 +24,7 @@ struct EditProfileView: View {
                 // ToolBar
                 HStack{
                     Button{
-                        viewModel.selectedImage = nil
-                        presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     } label: {
                         Text("Cancel")
                     }
@@ -71,7 +68,7 @@ struct EditProfileView: View {
                 }
                 
                 Button{
-                    isImagePresented = true
+                    isImagePickerPresented.toggle()
                 } label: {
                     Text("Edit profile picture")
                         .font(.footnote)
@@ -94,15 +91,10 @@ struct EditProfileView: View {
             Spacer()
            
             
-        }.sheet(isPresented: $isImagePresented) {
-            ImagePicker(selectedImage: $viewModel.selectedImage, isPresented: $isImagePresented)
+        }.sheet(isPresented: $isImagePickerPresented) {
+            ImagePicker(selectedImage: $viewModel.selectedImage, isPresented: $isImagePickerPresented)
         }
-        //NavigationLink(
-          //  destination: ImagePicker(selectedImage: $viewModel.selectedImage, isPresented: $isImagePickerPresented),
-           // isActive: $isImagePickerPresented,
-           // label: { EmptyView() }
-                
-        //)
+        
 
     }
 }
@@ -110,6 +102,6 @@ struct EditProfileView: View {
 struct EditProfileView_Previews: PreviewProvider {
     @State static var isImagePresented = false
     static var previews: some View {
-        EditProfileView(isImagePresented: $isImagePresented)
+        EditProfileView()
     }
 }

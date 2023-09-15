@@ -32,7 +32,7 @@ class DestinationService {
             case .success(let destinations):
                 completion(destinations)
             case .failure(let error):
-                print("Error fetching all destinations: \(error)")
+                //print("Error fetching all destinations: \(error)")
                 completion(nil)
             }
         }
@@ -52,19 +52,19 @@ class DestinationService {
             let jsonData = try JSONEncoder().encode(newDestination)
             request.httpBody = jsonData
             
-            print("Json data: \(jsonData)")
+            //print("Json data: \(jsonData)")
             
             networkRequestManager.performPostRequest(url: url, requestData: request) { result in
                 switch result {
                 case .success:
                     completion(true)
                 case .failure(let error):
-                    print("Error creating destination: \(error)")
+                    //print("Error creating destination: \(error)")
                     completion(false)
                 }
             }
         } catch {
-            print("Error encoding destination: \(error)")
+            //print("Error encoding destination: \(error)")
             completion(false);
         }
         
@@ -81,7 +81,7 @@ class DestinationService {
             case .success(let destinations):
                 completion(destinations)
             case .failure(let error):
-                print("Error fetching destination by continent: \(error)")
+                //print("Error fetching destination by continent: \(error)")
                 completion(nil)
             }
             
@@ -108,13 +108,13 @@ class DestinationService {
         request.httpMethod = "GET"
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error{
-                print("Error fetching destinations by current user: \(error)")
+                //print("Error fetching destinations by current user: \(error)")
                 completion(nil)
                 return
             }
             
             guard let data = data else {
-                print("No data received")
+                //print("No data received")
                 completion(nil)
                 return
             }
@@ -123,7 +123,7 @@ class DestinationService {
                 let destinations = try JSONDecoder().decode([Destination].self, from: data)
                 completion(destinations)
             } catch {
-                print("Error decoding destinations: \(error)")
+                //print("Error decoding destinations: \(error)")
                 completion(nil)
             }
             

@@ -17,7 +17,9 @@ struct HomeView: View {
     
     @StateObject private var viewModel = HomeViewModel()
     
+    
     let data: [DestinationData] = DestinationData.sampleData
+    
     
     var body: some View{
         VStack(spacing: 0.0){
@@ -133,9 +135,8 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider{
     static var previews: some View{
         HomeView()
+
         
-        HomeView()
-            .preferredColorScheme(.dark)
     }
 }
 

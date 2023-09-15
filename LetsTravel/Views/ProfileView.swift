@@ -23,6 +23,8 @@ struct ProfileView: View {
     @State private var isImagePickerPresented = false
     
     @State private var isEditProfileViewActive = false
+    
+    @EnvironmentObject private var routerManager: NavigationRouter
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
@@ -60,15 +62,13 @@ struct ProfileView: View {
                             .cancel()
                         ])
                     }
-                    Button{
-                        isEditProfileViewActive = true
-                    }label: {
-                        Text("Edit profile")
+
+                    NavigationLink("Edit profile") {
+                        EditProfileView()
                     }
                     
                 }
-                NavigationLink("", destination: EditProfileView( isImagePresented: $isImagePickerPresented), isActive: $isEditProfileViewActive)
-                    .opacity(0)
+                
                     
             }
             

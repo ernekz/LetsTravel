@@ -45,6 +45,8 @@
 		87ACD6E62A9CB4E900A08F44 /* DestinationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E52A9CB4E900A08F44 /* DestinationService.swift */; };
 		87ACD6E82A9CB54B00A08F44 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACD6E72A9CB54B00A08F44 /* Destination.swift */; };
 		87AE347E2AA7A4BF00549D54 /* LoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE347D2AA7A4BF00549D54 /* LoginInput.swift */; };
+		87B38BF42AB44AFD0071843D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B38BF32AB44AFD0071843D /* Route.swift */; };
+		87B38BF62AB44B5E0071843D /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B38BF52AB44B5E0071843D /* NavigationRouter.swift */; };
 		87BCF9002AA7B106007F5F75 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF8FF2AA7B106007F5F75 /* ProfileView.swift */; };
 		87BCF9022AA7B1BD007F5F75 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF9012AA7B1BD007F5F75 /* NotificationView.swift */; };
 		87E2AFBF2A9CEAC800461201 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */; };
@@ -94,6 +96,8 @@
 		87ACD6E52A9CB4E900A08F44 /* DestinationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationService.swift; sourceTree = "<group>"; };
 		87ACD6E72A9CB54B00A08F44 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		87AE347D2AA7A4BF00549D54 /* LoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInput.swift; sourceTree = "<group>"; };
+		87B38BF32AB44AFD0071843D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		87B38BF52AB44B5E0071843D /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		87BCF8FF2AA7B106007F5F75 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		87BCF9012AA7B1BD007F5F75 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				87E2AFBE2A9CEAC800461201 /* FieldValidator.swift */,
 				8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */,
 				8769CC982AA1000F0089004C /* TabSelection.swift */,
+				87B38BF32AB44AFD0071843D /* Route.swift */,
+				87B38BF52AB44B5E0071843D /* NavigationRouter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -340,11 +346,13 @@
 				87F73AE62A98FEA40078B7A5 /* CreateDestinationInput.swift in Sources */,
 				872A11DE2AA64591004E0D29 /* UserService.swift in Sources */,
 				8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */,
+				87B38BF62AB44B5E0071843D /* NavigationRouter.swift in Sources */,
 				8732086C2AA1238800586B93 /* ChatView.swift in Sources */,
 				87AE347E2AA7A4BF00549D54 /* LoginInput.swift in Sources */,
 				87ACD6E22A99123300A08F44 /* HomeViewModel.swift in Sources */,
 				87ABC46C2AA238B400E5E022 /* FeedCell.swift in Sources */,
 				87BCF9002AA7B106007F5F75 /* ProfileView.swift in Sources */,
+				87B38BF42AB44AFD0071843D /* Route.swift in Sources */,
 				87F73AE42A98FDF20078B7A5 /* CreateViewModel.swift in Sources */,
 				87ACD6E82A9CB54B00A08F44 /* Destination.swift in Sources */,
 				87ACD6E62A9CB4E900A08F44 /* DestinationService.swift in Sources */,

@@ -17,7 +17,7 @@ class ContinentService {
         
         URLSession.shared.dataTask(with: url){ data, response, error in
             if let error = error{
-                print("Error Fetching continents: \(error)")
+                //print("Error Fetching continents: \(error)")
                 completion(nil)
                 return
             }
@@ -32,7 +32,7 @@ class ContinentService {
                 let continents = try decoder.decode([Continent].self, from: data)
                 completion(continents)
             } catch {
-                print("Error decoding continets: \(error)")
+                //print("Error decoding continets: \(error)")
                 completion(nil)
             }
         }.resume()

@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    
     @AppStorage("jwtToken") var userSession: String?
     var body: some View {
         NavigationView{

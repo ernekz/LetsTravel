@@ -11,7 +11,7 @@ import SwiftUI
 
 struct FeedView: View {
     var body: some View{
-        NavigationStack {
+        VStack {
             HeaderView()
             //tool bar
             HStack{

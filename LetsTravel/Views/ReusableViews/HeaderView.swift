@@ -9,15 +9,20 @@ import Foundation
 import SwiftUI
 
 struct HeaderView: View {
+    
+
     var body: some View {
             HStack{
-                NavigationLink(destination: ProfileView()){
+                NavigationLink(
+                    destination: ProfileView(),
+                    label: {
                     Image("avatars")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .padding(.leading, 10)
-                }
-                    
+                
+                } )
+                
                 
                 Spacer()
                 

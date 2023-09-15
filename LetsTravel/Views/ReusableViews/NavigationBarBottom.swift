@@ -13,7 +13,7 @@ struct NavigationBarBottom: View {
     @State private var isLinkActive: Bool = false
     @EnvironmentObject private var tabSelection: TabSelection
     var body: some View{
-        TabView {
+        TabView(selection: $selectedTab) {
             
             HomeView()
                 .tag(0)

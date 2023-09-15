@@ -161,13 +161,13 @@ class UserService{
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("Error fetching user ID: \(error)")
+                //print("Error fetching user ID: \(error)")
                 completion(nil)
                 return
             }
 
             guard let data = data else {
-                print("No data received")
+                //print("No data received")
                 completion(nil)
                 return
             }
@@ -176,11 +176,11 @@ class UserService{
                 if let id = Int64(responseString) {
                     completion(id)
                 } else {
-                    print("Error converting response to Int64")
+                    //print("Error converting response to Int64")
                     completion(nil)
                 }
             } else {
-                print("Error decoding response data")
+                //print("Error decoding response data")
                 completion(nil)
             }
         }.resume()
@@ -205,13 +205,13 @@ class UserService{
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("Error fetching current user: \(error)")
+                //print("Error fetching current user: \(error)")
                 completion(nil)
                 return
             }
             
             guard let data = data else {
-                print("No data received")
+                //print("No data received")
                 completion(nil)
                 return
             }
@@ -220,7 +220,7 @@ class UserService{
                 let user = try JSONDecoder().decode(User.self, from: data)
                 completion(user)
             } catch {
-                print("Error decoding user: \(error)")
+                //print("Error decoding user: \(error)")
                 completion(nil)
             }
         }.resume()

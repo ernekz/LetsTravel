@@ -36,11 +36,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let selectedImage = info[.originalImage] as? UIImage {
                 parent.selectedImage = selectedImage
             }
-            DispatchQueue.main.async {
-                self.parent.isPresented = false
-            }
-            
-            
+            parent.isPresented = false
         }
     }
 }
