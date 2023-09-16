@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct EditProfileView: View {
     @Environment(\.dismiss) var dismiss
@@ -15,6 +16,8 @@ struct EditProfileView: View {
     @State private var bio = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    
+    @StateObject var imagePicker = ImagePicker()
     
     var body: some View {
         
@@ -51,8 +54,8 @@ struct EditProfileView: View {
             }
             
             VStack{
-                if let image = viewModel.selectedImage {
-                    Image(uiImage: image)
+                if let image = imagePicker.image {
+                    image
                         .resizable()
                         .foregroundColor(.white)
                         .background(.gray)
@@ -67,9 +70,7 @@ struct EditProfileView: View {
                         .frame(width: 80, height: 80)
                 }
                 
-                Button{
-                    isImagePickerPresented.toggle()
-                } label: {
+                PhotosPicker(selection: $imagePicker.imageSelection){
                     Text("Edit profile picture")
                         .font(.footnote)
                         .fontWeight(.semibold)
@@ -91,8 +92,6 @@ struct EditProfileView: View {
             Spacer()
            
             
-        }.sheet(isPresented: $isImagePickerPresented) {
-            ImagePicker(selectedImage: $viewModel.selectedImage, isPresented: $isImagePickerPresented)
         }
         
 

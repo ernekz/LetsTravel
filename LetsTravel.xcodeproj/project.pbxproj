@@ -31,8 +31,8 @@
 		8769CC952A9E1DBD0089004C /* NetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC942A9E1DBD0089004C /* NetworkRequestManager.swift */; };
 		8769CC972A9FC0C60089004C /* KafkaMessagePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */; };
 		8769CC992AA1000F0089004C /* TabSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC982AA1000F0089004C /* TabSelection.swift */; };
+		8771F2262AB61B97000BE030 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771F2252AB61B97000BE030 /* ImagePicker.swift */; };
 		8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795682A2A989D9C00BDD6AD /* DestinationView.swift */; };
-		8795E7D32AB0AE48009691A6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795E7D22AB0AE48009691A6 /* ImagePicker.swift */; };
 		87ABC46C2AA238B400E5E022 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46B2AA238B400E5E022 /* FeedCell.swift */; };
 		87ABC46E2AA2491200E5E022 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46D2AA2491200E5E022 /* LoginView.swift */; };
 		87ABC4702AA2491C00E5E022 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46F2AA2491C00E5E022 /* RegistrationView.swift */; };
@@ -82,8 +82,8 @@
 		8769CC942A9E1DBD0089004C /* NetworkRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestManager.swift; sourceTree = "<group>"; };
 		8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KafkaMessagePublisher.swift; sourceTree = "<group>"; };
 		8769CC982AA1000F0089004C /* TabSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSelection.swift; sourceTree = "<group>"; };
+		8771F2252AB61B97000BE030 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8795682A2A989D9C00BDD6AD /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
-		8795E7D22AB0AE48009691A6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		87ABC46B2AA238B400E5E022 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		87ABC46D2AA2491200E5E022 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		87ABC46F2AA2491C00E5E022 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -213,6 +213,7 @@
 				8769CC982AA1000F0089004C /* TabSelection.swift */,
 				87B38BF32AB44AFD0071843D /* Route.swift */,
 				87B38BF52AB44B5E0071843D /* NavigationRouter.swift */,
+				8771F2252AB61B97000BE030 /* ImagePicker.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -250,7 +251,6 @@
 				87ABC46B2AA238B400E5E022 /* FeedCell.swift */,
 				87ABC4712AA24A1400E5E022 /* InputView.swift */,
 				870739A02AAB2FDD00873CE5 /* DestinationCell.swift */,
-				8795E7D22AB0AE48009691A6 /* ImagePicker.swift */,
 				871AA5E12AB1ACFE00F2EB8E /* EditProfileRowView.swift */,
 			);
 			path = AdditionalViews;
@@ -376,10 +376,10 @@
 				8769CC972A9FC0C60089004C /* KafkaMessagePublisher.swift in Sources */,
 				8702CEA92A9787DB000B7758 /* LetsTravelApp.swift in Sources */,
 				87ABC4722AA24A1400E5E022 /* InputView.swift in Sources */,
+				8771F2262AB61B97000BE030 /* ImagePicker.swift in Sources */,
 				871AA5E42AB1C63500F2EB8E /* ViewRouter.swift in Sources */,
 				8769CC992AA1000F0089004C /* TabSelection.swift in Sources */,
 				870739A12AAB2FDD00873CE5 /* DestinationCell.swift in Sources */,
-				8795E7D32AB0AE48009691A6 /* ImagePicker.swift in Sources */,
 				8702CECC2A9792F5000B7758 /* HeaderView.swift in Sources */,
 				87BCF9022AA7B1BD007F5F75 /* NotificationView.swift in Sources */,
 				871AA5E22AB1ACFE00F2EB8E /* EditProfileRowView.swift in Sources */,
