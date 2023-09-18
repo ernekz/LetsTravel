@@ -12,18 +12,13 @@ struct HomeView: View {
     @State private var search: String = ""
     @State private var currentIndex: Int = 0
     @State private var dragOffSet: CGFloat = 0
-    
     @State private var selectedDestinationIndex: Int = 0
-    
     @StateObject private var viewModel = HomeViewModel()
-    
-    
     let data: [DestinationData] = DestinationData.sampleData
-    
-    
+    @EnvironmentObject private var router: NavigationRouter
     var body: some View{
         VStack(spacing: 0.0){
-            HeaderView()
+
             searchView
             continentFilter
             Spacer()
@@ -135,7 +130,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider{
     static var previews: some View{
         HomeView()
-
+            .environmentObject(NavigationRouter())
         
     }
 }

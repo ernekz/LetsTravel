@@ -63,8 +63,8 @@ struct ProfileView: View {
                         ])
                     }
 
-                    NavigationLink("Edit profile") {
-                        EditProfileView()
+                    Button("Edit profile") {
+                        routerManager.navigate(EditProfileView())
                     }
                     
                 }
@@ -153,6 +153,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(NavigationRouter())
     }
 }
 

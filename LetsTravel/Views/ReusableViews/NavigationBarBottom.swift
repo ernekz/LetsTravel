@@ -12,6 +12,7 @@ struct NavigationBarBottom: View {
     @State private var selectedTab: Int = 0
     @State private var isLinkActive: Bool = false
     @EnvironmentObject private var tabSelection: TabSelection
+    @EnvironmentObject private var router: NavigationRouter
     var body: some View{
         TabView(selection: $selectedTab) {
             
@@ -21,6 +22,7 @@ struct NavigationBarBottom: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
+                .environmentObject(router)
             CreateView()
                 .tag(1)
                 .tabItem(){
@@ -46,5 +48,6 @@ struct NavigationBarBottom: View {
 struct NavigationBarBottom_Preview: PreviewProvider{
     static var previews: some View{
         NavigationBarBottom()
+            .environmentObject(NavigationRouter())
     }
 }

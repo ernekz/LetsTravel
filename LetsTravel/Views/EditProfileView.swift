@@ -19,6 +19,8 @@ struct EditProfileView: View {
     
     @StateObject var imagePicker = ImagePicker()
     
+    @EnvironmentObject private var routerManager: NavigationRouter
+    
     var body: some View {
         
         VStack{
@@ -70,11 +72,7 @@ struct EditProfileView: View {
                         .frame(width: 80, height: 80)
                 }
                 
-                PhotosPicker(selection: $imagePicker.imageSelection){
-                    Text("Edit profile picture")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                }
+                PhotosPickerView(imageSelection: $imagePicker.imageSelection)
             }
             
             .navigationBarBackButtonHidden(true)

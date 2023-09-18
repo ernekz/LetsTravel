@@ -10,11 +10,20 @@ import CoreData
 
 struct ContentView: View {
     @AppStorage("jwtToken") var userSession: String?
+    @StateObject private var router = NavigationRouter()
     var body: some View {
         NavigationView{
             if userSession != nil {
                 VStack(spacing: 0.0){
-                    NavigationBarBottom()
+                    Button("ProfileView"){
+                        router.navigate(ProfileView())
+                    }
+                    NavigationLink(
+                        destination: ProfileView(),
+                        label: {
+                            Text("Profile")
+                            
+                        })
                 }
             } else {
                 LoginView()

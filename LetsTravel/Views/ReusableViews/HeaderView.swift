@@ -9,19 +9,19 @@ import Foundation
 import SwiftUI
 
 struct HeaderView: View {
-    
-
+    @EnvironmentObject private var router: NavigationRouter
     var body: some View {
             HStack{
-                NavigationLink(
-                    destination: ProfileView(),
-                    label: {
+                Button{
+                    let profileView = EditProfileView()
+                    router.navigate(profileView)
+                    print("Navigating to ProfileView")
+                }label: {
                     Image("avatars")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .padding(.leading, 10)
-                
-                } )
+                }
                 
                 
                 Spacer()
@@ -45,5 +45,6 @@ struct HeaderView: View {
 struct HeaderView_Preview: PreviewProvider{
     static var previews: some View{
         HeaderView()
+            .environmentObject(NavigationRouter())
     }
 }
