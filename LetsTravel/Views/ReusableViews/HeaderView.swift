@@ -13,8 +13,7 @@ struct HeaderView: View {
     var body: some View {
             HStack{
                 Button{
-                    let profileView = EditProfileView()
-                    router.navigate(profileView)
+                    router.push(to: .profile)
                     print("Navigating to ProfileView")
                 }label: {
                     Image("avatars")

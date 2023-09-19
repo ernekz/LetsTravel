@@ -64,7 +64,7 @@ struct ProfileView: View {
                     }
 
                     Button("Edit profile") {
-                        routerManager.navigate(EditProfileView())
+                        routerManager.push(to: .editprofile)
                     }
                     
                 }

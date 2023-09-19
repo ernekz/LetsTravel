@@ -8,19 +8,31 @@
 import Foundation
 import SwiftUI
 
-struct Route{
-    let id: UUID
-    let view: AnyView
-
-    init<Content: View>(_ view: Content) {
-        self.id = UUID()
-        self.view = AnyView(view)
-    }
+enum Route{
+    case profile
+    case editprofile
+    case imagepicker
 }
 
 extension Route: Equatable {
-    static func == (lhs: Route, rhs: Route) -> Bool {
-        return lhs.id == rhs.id
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(self.hashValue)
     }
 }
+
+
+extension Route:View {
+    var body: some View{
+        switch self {
+        case .profile:
+            ProfileView()
+        case .editprofile:
+            EditProfileView()
+        case .imagepicker:
+            PhotosPickerView(imageSelection: .constant(nil))
+        }
+    }
+}
+
+
 

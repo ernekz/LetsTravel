@@ -18,7 +18,7 @@ struct HomeView: View {
     @EnvironmentObject private var router: NavigationRouter
     var body: some View{
         VStack(spacing: 0.0){
-
+            HeaderView()
             searchView
             continentFilter
             Spacer()

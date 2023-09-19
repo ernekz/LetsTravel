@@ -9,15 +9,17 @@ import Foundation
 import SwiftUI
 
 final class NavigationRouter: ObservableObject {
-    @Published var currentRoute: Route? = nil
-
-    func navigate<Content: View>(_ route: Content) {
-        
-        currentRoute = Route(route)
-        print("Navigation has been clicked: \(String(describing: currentRoute))")
-    }
-
-    func goBack() {
-        currentRoute = nil
-    }
+    @Published var routes = [Route]()
+       
+       func push(to screen: Route) {
+           routes.append(screen)
+       }
+       
+       func goBack() {
+           _ = routes.popLast()
+       }
+       
+       func reset() {
+           routes = []
+       }
 }

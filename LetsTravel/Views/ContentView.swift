@@ -12,23 +12,16 @@ struct ContentView: View {
     @AppStorage("jwtToken") var userSession: String?
     @StateObject private var router = NavigationRouter()
     var body: some View {
-        NavigationView{
+        NavigationStack(path: $router.routes){
             if userSession != nil {
                 VStack(spacing: 0.0){
-                    Button("ProfileView"){
-                        router.navigate(ProfileView())
-                    }
-                    NavigationLink(
-                        destination: ProfileView(),
-                        label: {
-                            Text("Profile")
-                            
-                        })
-                }
+                    NavigationBarBottom()
+                }.navigationDestination(for: Route.self) { $0 }
             } else {
                 LoginView()
             }
-        }
+        }.environmentObject(router)
+        
     }
 }
 
