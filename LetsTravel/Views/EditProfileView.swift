@@ -29,7 +29,7 @@ struct EditProfileView: View {
                 // ToolBar
                 HStack{
                     Button{
-                        dismiss()
+                        routerManager.goBack()
                     } label: {
                         Text("Cancel")
                     }
@@ -72,7 +72,11 @@ struct EditProfileView: View {
                         .frame(width: 80, height: 80)
                 }
                 
-                PhotosPickerView(imageSelection: $imagePicker.imageSelection)
+                PhotosPicker(selection: $imagePicker.imageSelection) {
+                    Text("Edit profile picture")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
             }
             
             .navigationBarBackButtonHidden(true)

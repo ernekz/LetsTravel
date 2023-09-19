@@ -8,12 +8,15 @@
 import Foundation
 
 import SwiftUI
+import PhotosUI
 
 class CreateViewModel: ObservableObject {
     
     private let continentService = ContinentService()
     private let destinationService = DestinationService.shared
     private let userService = UserService.shared
+    
+    private let imagePicker = ImagePicker.self
     
     @Published var createInput = CreateDestinationInput(
             country: "",
@@ -33,7 +36,7 @@ class CreateViewModel: ObservableObject {
     @Published var lDate = Date()
     @Published var rDate = Date()
     
-    @Published var selectedImage: UIImage?
+    @Published var selectedImage: PhotosPickerItem?
     
     @Published var country = FieldValidator()
     @Published var continent = FieldValidator()
@@ -65,11 +68,11 @@ class CreateViewModel: ObservableObject {
             completion(false)
             return
         }
-        guard let imageData = selectedImage?.jpegData(compressionQuality: 0.8) else {
-            completion(false)
-            return
-        }
-        createInput.imageUrl = imageData
+       // guard let imageData = imagePicker.selectedImage?.jpegData(compressionQuality: 0.8) else {
+        //    completion(false)
+        //    return
+       // }
+        //createInput.imageUrl = imageData
             print("City: \(createInput.city)")
             print("People: \(createInput.people)")
             print("Start Date: \(createInput.leavingDate)")

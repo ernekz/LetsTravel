@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import PhotosUI
 
 struct CreateView: View {
     
@@ -19,6 +20,8 @@ struct CreateView: View {
     
     
     @State private var isImagePickerPresented = false
+    
+    @StateObject var imagePicker = ImagePicker()
     
     
 
@@ -148,17 +151,16 @@ struct CreateView: View {
                                     }
                                 }
                                 
-                                if let image = viewModel.selectedImage{
-                                    Image(uiImage: image)
+                                if let image = imagePicker.image{
+                                    image
                                         .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 200, height: 200)
-                                } else {
-                                    Text("No image selected")
-                                }
-                                Button("Select Image"){
-                                    isImagePickerPresented.toggle()
-                                }
+                                        .foregroundColor(.white)
+                                        .background(.gray)
+                                        .frame(width: 250, height: 350)
+                               } else {
+                                   Text("No image selected")
+                               }
+                                PhotosPicker("Select Image", selection: $imagePicker.imageSelection)
                                 
                                 
                                 Button("Submit"){
@@ -190,8 +192,6 @@ struct CreateView: View {
                                     }.id(UUID())
                                 
                                 
-                            }.sheet(isPresented: $isImagePickerPresented){
-                                //ImagePicker(selectedImage: $viewModel.selectedImage, isPresented: $isImagePickerPresented)
                             }
                             
                         }
