@@ -161,7 +161,7 @@ class UserService{
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                //print("Error fetching user ID: \(error)")
+                print("Error fetching user ID: \(error)")
                 completion(nil)
                 return
             }
@@ -205,7 +205,7 @@ class UserService{
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                //print("Error fetching current user: \(error)")
+                print("Error fetching current user: \(error)")
                 completion(nil)
                 return
             }

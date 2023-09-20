@@ -17,7 +17,7 @@ class ContinentService {
         
         URLSession.shared.dataTask(with: url){ data, response, error in
             if let error = error{
-                //print("Error Fetching continents: \(error)")
+                print("Error Fetching continents: \(error)")
                 completion(nil)
                 return
             }

@@ -16,7 +16,9 @@ class RegisterViewModel: ObservableObject {
     @Published var registrationInput = RegistrationInput(
         email: "",
         fullName: "",
-        password: ""
+        password: "",
+        bio: "",
+        avatar: Data()
     
     )
     
@@ -28,6 +30,7 @@ class RegisterViewModel: ObservableObject {
     @Published var fullName = FieldValidator()
     @Published var password = FieldValidator()
     @Published var rePassword = FieldValidator()
+    @Published var bio = FieldValidator()
     
     
     
@@ -38,10 +41,6 @@ class RegisterViewModel: ObservableObject {
         }
         return nil
     }
-    
-    
-    
-    
     
     var isRegistrationValid: Bool{
         var isValid = true

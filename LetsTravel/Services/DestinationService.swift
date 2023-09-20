@@ -32,7 +32,7 @@ class DestinationService {
             case .success(let destinations):
                 completion(destinations)
             case .failure(let error):
-                //print("Error fetching all destinations: \(error)")
+                print("Error fetching all destinations: \(error)")
                 completion(nil)
             }
         }
@@ -59,15 +59,43 @@ class DestinationService {
                 case .success:
                     completion(true)
                 case .failure(let error):
-                    //print("Error creating destination: \(error)")
+                    print("Error creating destination: \(error)")
                     completion(false)
                 }
             }
         } catch {
             //print("Error encoding destination: \(error)")
-            completion(false);
+            completion(false)
         }
         
+    }
+    
+    func updateDestination(newDestination: CreateDestinationInput, completion: @escaping (Bool) -> Void){
+        guard let url = createURL(with: "/update") else {
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(newDestination)
+            request.httpBody = jsonData
+            
+            networkRequestManager.performPostRequest(url: url, requestData: request) { result in
+                switch result {
+                case .success:
+                    completion(true)
+                case .failure(let error):
+                    completion(false)
+                    print("Error updating destination: \(error)")
+                }
+            }
+        } catch {
+            completion(false)
+        }
     }
     
     func fetchDestinationsByContinentId(continentId: Int, completion: @escaping ([Destination]?) -> Void) {
@@ -81,7 +109,7 @@ class DestinationService {
             case .success(let destinations):
                 completion(destinations)
             case .failure(let error):
-                //print("Error fetching destination by continent: \(error)")
+                print("Error fetching destination by continent: \(error)")
                 completion(nil)
             }
             
@@ -108,7 +136,7 @@ class DestinationService {
         request.httpMethod = "GET"
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error{
-                //print("Error fetching destinations by current user: \(error)")
+                print("Error fetching destinations by current user: \(error)")
                 completion(nil)
                 return
             }
@@ -129,6 +157,7 @@ class DestinationService {
             
         }.resume()
     }
+    
     
     
     //Fetching Kafka messages about newly created destinations for real-time update

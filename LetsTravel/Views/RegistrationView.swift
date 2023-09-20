@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import PhotosUI
 struct RegistrationView: View {
     
     @StateObject private var viewModel = RegisterViewModel()
@@ -17,16 +17,37 @@ struct RegistrationView: View {
     @State private var fullName = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    
+    @StateObject var imagePicker = ImagePicker()
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
             // Logo
-            Image("Logo")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 200, height: 240)
-                .padding(.vertical, 32)
             
+            
+            VStack{
+                if let image = imagePicker.image {
+                    image
+                        .resizable()
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .clipShape(Circle())
+                        .frame(width: 150, height: 150)
+                } else {
+                    Image(systemName: "person")
+                        .resizable()
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .clipShape(Circle())
+                        .frame(width: 150, height: 150)
+                }
+                
+                PhotosPicker(selection: $imagePicker.imageSelection) {
+                    Text("Edit profile picture")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
+            }.padding(.top, 24)
             
             //Input fields
             
@@ -53,6 +74,11 @@ struct RegistrationView: View {
                           placeholder: "Confirm your Password",
                           error: viewModel.rePassword.errorMessage ?? "",
                           isSecureField: true)
+                
+                InputView(text: $viewModel.registrationInput.bio,
+                          title: "Bio",
+                          placeholder: "Create your bio",
+                          error: viewModel.bio.errorMessage ?? "")
             }
             .padding(.horizontal)
             .padding(.top, 12)
