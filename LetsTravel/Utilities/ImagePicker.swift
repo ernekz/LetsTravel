@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 @MainActor
-class ImagePicker: ObservableObject{
+class ImagePicker: ObservableObject {
     @Published var image: Image?
     @Published var imageSelection: PhotosPickerItem? {
         didSet {
@@ -21,16 +21,21 @@ class ImagePicker: ObservableObject{
         }
     }
     
+    var imageDataCallbackPublisher = CallbackPublisher<Data>()
+    
+    init() {}
+    
     func loadTransferable(from imageSelection: PhotosPickerItem?) async throws {
         do {
             if let data = try await imageSelection?.loadTransferable(type: Data.self){
                 if let uiImage = UIImage(data: data){
                     self.image = Image(uiImage: uiImage)
+                    imageDataCallbackPublisher.send(output: data)
                 }
             }
         } catch {
             print(error.localizedDescription)
             image = nil
         }
-    }
+    }    
 }

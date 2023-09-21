@@ -10,7 +10,7 @@ import SwiftUI
 
 class ProfileViewModel: ObservableObject{
     @Published var destinations: [Destination] = []
-    @Published var user: User = User(email: "", fullName: "")
+    @Published var user: User = User(email: "", fullName: "", bio: "", avatar: Data())
     
     private let destinationService = DestinationService.shared
     private let userService = UserService.shared

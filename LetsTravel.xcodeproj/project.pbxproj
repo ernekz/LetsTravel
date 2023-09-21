@@ -32,6 +32,7 @@
 		8769CC972A9FC0C60089004C /* KafkaMessagePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */; };
 		8769CC992AA1000F0089004C /* TabSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769CC982AA1000F0089004C /* TabSelection.swift */; };
 		8771F2262AB61B97000BE030 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771F2252AB61B97000BE030 /* ImagePicker.swift */; };
+		8783AB812ABC9F1200304BE6 /* CallbackPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8783AB802ABC9F1200304BE6 /* CallbackPublisher.swift */; };
 		8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795682A2A989D9C00BDD6AD /* DestinationView.swift */; };
 		87ABC46C2AA238B400E5E022 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46B2AA238B400E5E022 /* FeedCell.swift */; };
 		87ABC46E2AA2491200E5E022 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46D2AA2491200E5E022 /* LoginView.swift */; };
@@ -84,6 +85,7 @@
 		8769CC962A9FC0C60089004C /* KafkaMessagePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KafkaMessagePublisher.swift; sourceTree = "<group>"; };
 		8769CC982AA1000F0089004C /* TabSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSelection.swift; sourceTree = "<group>"; };
 		8771F2252AB61B97000BE030 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8783AB802ABC9F1200304BE6 /* CallbackPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackPublisher.swift; sourceTree = "<group>"; };
 		8795682A2A989D9C00BDD6AD /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		87ABC46B2AA238B400E5E022 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		87ABC46D2AA2491200E5E022 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				87B38BF32AB44AFD0071843D /* Route.swift */,
 				87B38BF52AB44B5E0071843D /* NavigationRouter.swift */,
 				8771F2252AB61B97000BE030 /* ImagePicker.swift */,
+				8783AB802ABC9F1200304BE6 /* CallbackPublisher.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				8732086A2AA1236900586B93 /* FeedView.swift in Sources */,
 				8702CEAB2A9787DB000B7758 /* ContentView.swift in Sources */,
 				8702CEC52A979019000B7758 /* HomeView.swift in Sources */,
+				8783AB812ABC9F1200304BE6 /* CallbackPublisher.swift in Sources */,
 				87E2B1FC2AAF9EA400499A27 /* ProfileViewModel.swift in Sources */,
 				8702CEC92A979049000B7758 /* MessagesView.swift in Sources */,
 				87ABC4702AA2491C00E5E022 /* RegistrationView.swift in Sources */,

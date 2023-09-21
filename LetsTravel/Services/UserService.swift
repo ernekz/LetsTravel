@@ -211,7 +211,7 @@ class UserService{
             }
             
             guard let data = data else {
-                //print("No data received")
+                print("No data received")
                 completion(nil)
                 return
             }
@@ -220,7 +220,7 @@ class UserService{
                 let user = try JSONDecoder().decode(User.self, from: data)
                 completion(user)
             } catch {
-                //print("Error decoding user: \(error)")
+                print("Error decoding user: \(error)")
                 completion(nil)
             }
         }.resume()

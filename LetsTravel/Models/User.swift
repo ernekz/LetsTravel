@@ -10,5 +10,7 @@ import Foundation
 struct User: Codable, Hashable{
     let email: String
     let fullName: String
+    let bio: String
+    let avatar: Data?
     
 }

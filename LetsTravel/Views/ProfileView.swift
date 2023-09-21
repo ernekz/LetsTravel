@@ -32,11 +32,18 @@ struct ProfileView: View {
             ZStack{
                
                 HStack{
-                    Image("avatars")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .padding()
+                    //Image("avatars")
+                    //.resizable()
+                    //.scaledToFit()
+                    //.frame(width: 100, height: 100)
+                   // .padding()
+                    if let uiImage = UIImage(data: profileViewModel.user.avatar!){
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .clipShape(Circle())
+                            .frame(width: 100, height: 100)
+                            .padding()
+                    }
                     
                     
                     Spacer()

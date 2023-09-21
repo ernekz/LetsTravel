@@ -10,16 +10,27 @@ import SwiftUI
 
 struct HeaderView: View {
     @EnvironmentObject private var router: NavigationRouter
+    @StateObject private var viewModel = ProfileViewModel()
+
     var body: some View {
             HStack{
                 Button{
                     router.push(to: .profile)
                     print("Navigating to ProfileView")
                 }label: {
-                    Image("avatars")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .padding(.leading, 10)
+                    if let uiImage = UIImage(data: viewModel.user.avatar!){
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .clipShape(Circle())
+                            .frame(width: 50, height: 50)
+                            .padding(.leading, 10)
+                            
+                    }else {
+                        Image("avatars")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .padding(.leading, 10)
+                    }
                 }
                 
                 
@@ -35,6 +46,8 @@ struct HeaderView: View {
                     Image(systemName: "bell.fill")
                         .padding(.trailing, 10)
                 }.navigationBarBackButtonHidden(true)
+            }.onAppear{
+                viewModel.fetchUser()
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 3)

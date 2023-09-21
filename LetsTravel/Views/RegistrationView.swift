@@ -17,8 +17,11 @@ struct RegistrationView: View {
     @State private var fullName = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var imageData: Data?
+
+    @StateObject private var imagePicker = ImagePicker()
     
-    @StateObject var imagePicker = ImagePicker()
+    
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
@@ -46,6 +49,11 @@ struct RegistrationView: View {
                     Text("Edit profile picture")
                         .font(.footnote)
                         .fontWeight(.semibold)
+                }.onAppear{
+                    imagePicker.imageDataCallbackPublisher.listen{ imageData in
+                        viewModel.registrationInput.avatar = imageData
+                        print("Setting the viewModel data: \(viewModel.registrationInput.avatar)")
+                    }
                 }
             }.padding(.top, 24)
             
