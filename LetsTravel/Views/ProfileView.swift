@@ -61,6 +61,7 @@ struct ProfileView: View {
                                 viewModel.logout{ success in
                                     if success {
                                         print("Loggout success")
+                                        routerManager.goBack()
                                     } else {
                                         print("Logout failed")
                                     }

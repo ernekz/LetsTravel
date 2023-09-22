@@ -51,4 +51,10 @@ class ProfileViewModel: ObservableObject{
     func fetchUserPosts(){
         
     }
+    
+    func updateUser(completion: @escaping (Bool) -> Void){
+        
+        
+        
+    }
 }

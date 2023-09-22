@@ -32,6 +32,7 @@ class RegisterViewModel: ObservableObject {
     @Published var rePassword = FieldValidator()
     @Published var bio = FieldValidator()
     
+    @Published var userValidation = UserValidation()
     
     
     func hashPassword(password: String) -> String? {
@@ -50,31 +51,35 @@ class RegisterViewModel: ObservableObject {
         fullName.errorMessage = registrationInput.fullName.isEmpty ? "Full name cannot be empty": nil
         
         
-        if isEmailFree && !registrationInput.email.isEmpty{
-            if !registrationInput.email.isValidEmail(){
+        if isEmailFree && !registrationInput.email.isEmpty {
+            if !userValidation.isValidEmail() {
                 isValid = false
-                email.errorMessage = "Please ensure that email is proper format"
+                email.errorMessage = "Please ensure that the email is in the proper format"
             }
         } else if !isEmailFree && !registrationInput.email.isEmpty {
             isValid = false
             email.errorMessage = "Email is already taken"
         }
         
-        if passwordToBeHashed != confirmPassword{
+//        if passwordToBeHashed != confirmPassword{
+//            isValid = false
+//            password.errorMessage = "Password do not match"
+//        } else if !passwordToBeHashed.userValidation.containsCapitalLetter() {
+//            isValid = false
+//            password.errorMessage = "Password must contain at least one capital letter"
+//        } else if !passwordToBeHashed.containsNumber() {
+//            isValid = false
+//            password.errorMessage = "Password must contain at least one number"
+//        } else if passwordToBeHashed.count < 8 {
+//            isValid = false
+//            password.errorMessage = "Password must be at least 8 characters long"
+//        }
+        
+        let errorMessages = userValidation.validatePassword(passwordToBeHashed, confirmPassword: confirmPassword)
+        if !errorMessages.isEmpty {
             isValid = false
-            password.errorMessage = "Password do not match"
-        } else if !passwordToBeHashed.containsCapitalLetter() {
-            isValid = false
-            password.errorMessage = "Password must contain at least one capital letter"
-        } else if !passwordToBeHashed.containsNumber() {
-            isValid = false
-            password.errorMessage = "Password must contain at least one number"
-        } else if passwordToBeHashed.count < 8 {
-            isValid = false
-            password.errorMessage = "Password must be at least 8 characters long"
+            password.errorMessage = errorMessages.joined(separator: "\n")
         }
-        
-        
         return isValid
     }
     
@@ -106,7 +111,7 @@ class RegisterViewModel: ObservableObject {
         print("email: \(registrationInput.email)")
         print("fullName: \(registrationInput.fullName)")
         
-        registrationInput.password = hashPassword(password: passwordToBeHashed)!
+        registrationInput.password = userValidation.hashPassword(password: passwordToBeHashed)!
         print("password: \(registrationInput.password)")
         
         // calling api to register user
@@ -118,22 +123,3 @@ class RegisterViewModel: ObservableObject {
     }
 }
 
-extension String {
-    func containsCapitalLetter() -> Bool {
-            let capitalLetterRegEx = ".*[A-Z]+.*"
-            let textPred = NSPredicate(format:"SELF MATCHES %@", capitalLetterRegEx)
-            return textPred.evaluate(with: self)
-        }
-        
-        func containsNumber() -> Bool {
-            let numberRegEx = ".*[0-9]+.*"
-            let textPred = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
-            return textPred.evaluate(with: self)
-        }
-    
-        func isValidEmail() -> Bool {
-            let emailRegex = #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#
-            let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-            return emailPredicate.evaluate(with: self)
-        }
-}
