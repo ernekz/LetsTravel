@@ -116,7 +116,6 @@ class RegisterViewModel: ObservableObject {
         
         // calling api to register user
         
-        
         userService.registerUser(newRegister: registrationInput, completion: completion)
        
         

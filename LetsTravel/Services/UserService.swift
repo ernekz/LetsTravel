@@ -225,6 +225,38 @@ class UserService{
             }
         }.resume()
     }
+    
+    func updateUser(updateProfile: UpdateProfileInput, completion: @escaping (Bool) -> Void) {
+        
+        guard let url = createURL(with: "/update") else {
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do{
+            let jsonData = try JSONEncoder().encode(updateProfile)
+            request.httpBody = jsonData
+            
+            print("Json data: \(jsonData)")
+            
+            networkRequestManager.performPostRequest(url: url, requestData: request) { result in
+                switch result {
+                case .success:
+                    completion(true)
+                case .failure(let error):
+                    print("Error creating user: \(error)")
+                    completion(false)
+                }
+            }
+        } catch {
+            print("Error encoding user: \(error)")
+            completion(false)
+        }
+    }
 
     // For testing purposes
     func curlEquivalent(for request: URLRequest) -> String? {
