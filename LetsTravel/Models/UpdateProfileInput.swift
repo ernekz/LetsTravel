@@ -8,8 +8,8 @@
 import Foundation
 
 struct UpdateProfileInput: Codable, Hashable {
-    let fullName: String
-    let bio: String
-    let avatar: Data?
-    let password: String
+    var fullName: String
+    var bio: String
+    var avatar: Data?
+    var password: String
 }

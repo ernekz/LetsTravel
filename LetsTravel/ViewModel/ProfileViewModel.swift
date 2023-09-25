@@ -12,13 +12,17 @@ class ProfileViewModel: ObservableObject{
     @Published var destinations: [Destination] = []
     @Published var user: User = User(email: "", fullName: "", bio: "", avatar: Data())
     
-    @Published var updateUser: UpdateProfileInput = UpdateProfileInput(fullName: "", bio: "", avatar: Data(), password: "")
+    @Published var updateUser = UpdateProfileInput(fullName: "", bio: "", avatar: Data(), password: "")
     
     @Published var confirmPassword: String = ""
     private let destinationService = DestinationService.shared
     private let userService = UserService.shared
     
+    private let userValidation = UserValidation()
     @Published var selectedImage: UIImage?
+    
+    @Published var password = FieldValidator()
+
     
     
     func fetchUser(){
@@ -55,7 +59,22 @@ class ProfileViewModel: ObservableObject{
         
     }
     
+    var isUpdateValid: Bool{
+        var isValid = true
+        let errorMessages = userValidation.validatePassword(updateUser.password, confirmPassword: confirmPassword)
+        if !errorMessages.isEmpty {
+            isValid = false
+            password.errorMessage = errorMessages.joined(separator: "\n")
+        }
+        
+        return isValid
+    }
     func updateUser(completion: @escaping (Bool) -> Void){
+        
+        guard isUpdateValid else {
+            completion(false)
+            return
+        }
         userService.updateUser(updateProfile: updateUser, completion: completion)
         
     }

@@ -1,14 +1,15 @@
 //
-//  EditProfileView.swift
+//  EditDestinationView.swift
 //  LetsTravel
 //
-//  Created by Ernestas Kazinevicius on 2023-09-13.
+//  Created by Ernestas Kazinevicius on 2023-09-25.
 //
 
 import SwiftUI
 import PhotosUI
 
-struct EditProfileView: View {
+struct EditDestinationView: View {
+    
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel = ProfileViewModel()
     @State private var isImagePickerPresented = false
@@ -16,16 +17,14 @@ struct EditProfileView: View {
     @StateObject var imagePicker = ImagePicker()
     
     @EnvironmentObject private var routerManager: NavigationRouter
-    
     var body: some View {
-        
         VStack{
             VStack{
                 
                 // ToolBar
                 HStack{
                     Button{
-                        routerManager.goBack()
+                        //routerManager.goBack()
                     } label: {
                         Text("Cancel")
                     }
@@ -40,13 +39,13 @@ struct EditProfileView: View {
                     
                     Button{
                         print("Update profile info")
-                        viewModel.updateUser { success in
-                            if success{
-                                print("Successfully updated profile")
-                            } else {
-                                print("Update failed")
-                            }
-                        }
+//                        viewModel.updateUser { success in
+//                            if success{
+//                                print("Successfully updated profile")
+//                            } else {
+//                                print("Update failed")
+//                            }
+//                        }
                         
                     } label: {
                         Text("Done")
@@ -103,9 +102,8 @@ struct EditProfileView: View {
     }
 }
 
-struct EditProfileView_Previews: PreviewProvider {
-    @State static var isImagePresented = false
+struct EditDestinationView_Previews: PreviewProvider {
     static var previews: some View {
-        EditProfileView()
+        EditDestinationView()
     }
 }

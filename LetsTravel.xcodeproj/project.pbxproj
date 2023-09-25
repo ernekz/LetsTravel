@@ -36,6 +36,7 @@
 		8784AC212ABE0E7600F0AEE5 /* UserValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784AC202ABE0E7600F0AEE5 /* UserValidation.swift */; };
 		8784AC232ABE14D700F0AEE5 /* UpdateProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784AC222ABE14D700F0AEE5 /* UpdateProfileInput.swift */; };
 		8795682B2A989D9C00BDD6AD /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795682A2A989D9C00BDD6AD /* DestinationView.swift */; };
+		87A533F82AC1E35500E635E1 /* EditDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A533F72AC1E35500E635E1 /* EditDestinationView.swift */; };
 		87ABC46C2AA238B400E5E022 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46B2AA238B400E5E022 /* FeedCell.swift */; };
 		87ABC46E2AA2491200E5E022 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46D2AA2491200E5E022 /* LoginView.swift */; };
 		87ABC4702AA2491C00E5E022 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABC46F2AA2491C00E5E022 /* RegistrationView.swift */; };
@@ -91,6 +92,7 @@
 		8784AC202ABE0E7600F0AEE5 /* UserValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidation.swift; sourceTree = "<group>"; };
 		8784AC222ABE14D700F0AEE5 /* UpdateProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileInput.swift; sourceTree = "<group>"; };
 		8795682A2A989D9C00BDD6AD /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
+		87A533F72AC1E35500E635E1 /* EditDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationView.swift; sourceTree = "<group>"; };
 		87ABC46B2AA238B400E5E022 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		87ABC46D2AA2491200E5E022 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		87ABC46F2AA2491C00E5E022 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				87BCF8FF2AA7B106007F5F75 /* ProfileView.swift */,
 				87BCF9012AA7B1BD007F5F75 /* NotificationView.swift */,
 				871AA5DF2AB1A87B00F2EB8E /* EditProfileView.swift */,
+				87A533F72AC1E35500E635E1 /* EditDestinationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				87F48C8C2AB8A12A00DF6AF4 /* PhotosPickerView.swift in Sources */,
 				87F73AE62A98FEA40078B7A5 /* CreateDestinationInput.swift in Sources */,
 				872A11DE2AA64591004E0D29 /* UserService.swift in Sources */,
+				87A533F82AC1E35500E635E1 /* EditDestinationView.swift in Sources */,
 				8702CEB52A9787DC000B7758 /* LetsTravel.xcdatamodeld in Sources */,
 				8784AC212ABE0E7600F0AEE5 /* UserValidation.swift in Sources */,
 				87B38BF62AB44B5E0071843D /* NavigationRouter.swift in Sources */,
