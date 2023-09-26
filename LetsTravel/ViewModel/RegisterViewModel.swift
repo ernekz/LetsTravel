@@ -102,10 +102,11 @@ class RegisterViewModel: ObservableObject {
     
     func submitRegistration(completion: @escaping (Bool) -> Void){
         
-        guard isRegistrationValid else {
+        /*guard isRegistrationValid else {
+            print("something is wrong with validation")
             completion(false)
             return
-        }
+        }*/
         
         print("Submitting...")
         print("email: \(registrationInput.email)")

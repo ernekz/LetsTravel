@@ -39,7 +39,7 @@ struct EditProfileView: View {
                     Spacer()
                     
                     Button{
-                        print("Update profile info")
+                        //print("Update profile info")
                         viewModel.updateUser { success in
                             if success{
                                 print("Successfully updated profile")
@@ -98,8 +98,6 @@ struct EditProfileView: View {
            
             
         }
-        
-
     }
 }
 

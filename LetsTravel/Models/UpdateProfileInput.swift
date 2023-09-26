@@ -8,6 +8,7 @@
 import Foundation
 
 struct UpdateProfileInput: Codable, Hashable {
+    var email: String
     var fullName: String
     var bio: String
     var avatar: Data?

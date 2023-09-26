@@ -12,7 +12,7 @@ class ProfileViewModel: ObservableObject{
     @Published var destinations: [Destination] = []
     @Published var user: User = User(email: "", fullName: "", bio: "", avatar: Data())
     
-    @Published var updateUser = UpdateProfileInput(fullName: "", bio: "", avatar: Data(), password: "")
+    @Published var updateUser = UpdateProfileInput(email: "",fullName: "", bio: "", avatar: Data(), password: "")
     
     @Published var confirmPassword: String = ""
     private let destinationService = DestinationService.shared
@@ -71,10 +71,12 @@ class ProfileViewModel: ObservableObject{
     }
     func updateUser(completion: @escaping (Bool) -> Void){
         
-        guard isUpdateValid else {
+        /*guard isUpdateValid else {
             completion(false)
             return
-        }
+        }*/
+        print("Updating user in viewModel")
+        
         userService.updateUser(updateProfile: updateUser, completion: completion)
         
     }

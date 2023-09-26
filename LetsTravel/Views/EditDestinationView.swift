@@ -39,13 +39,13 @@ struct EditDestinationView: View {
                     
                     Button{
                         print("Update profile info")
-//                        viewModel.updateUser { success in
-//                            if success{
-//                                print("Successfully updated profile")
-//                            } else {
-//                                print("Update failed")
-//                            }
-//                        }
+                        viewModel.updateUser { success in
+                            if success{
+                                print("Successfully updated profile")
+                            } else {
+                                print("Update failed")
+                            }
+                        }
                         
                     } label: {
                         Text("Done")
